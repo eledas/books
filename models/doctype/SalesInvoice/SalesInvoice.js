@@ -65,7 +65,7 @@ export default {
     },
     {
       fieldname: 'items',
-      label: 'Items',
+      label: 'Productos',
       fieldtype: 'Table',
       childtype: 'SalesInvoiceItem',
       required: true,

@@ -18,6 +18,10 @@ const config = {
       title: _('Dashboard'),
       route: '/',
       icon: getIcon('dashboard')
+    },  {
+      title: _('Inventario'),
+      icon: getIcon('sales'),
+      route: '/list/Item',
     },
     {
       title: _('Sales'),
@@ -35,7 +39,7 @@ const config = {
           doctype: 'Customer'
         },
         {
-          label: _('Items'),
+          label: _('Productos'),
           route: '/list/Item',
           doctype: 'Item'
         },
@@ -67,7 +71,7 @@ const config = {
           doctype: 'Supplier'
         },
         {
-          label: _('Items'),
+          label: _('Productos'),
           route: '/list/Item',
           doctype: 'Item'
         },

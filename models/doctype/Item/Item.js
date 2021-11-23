@@ -37,13 +37,13 @@ export default {
     {
       fieldname: 'amount',
       label: 'Existencia',
-      fieldtype: 'Number',
+      fieldtype: 'Int',
       placeholder: '0',
     },
     {
       fieldname: 'minAmount',
       label: 'Existencia Minima',
-      fieldtype: 'Number',
+      fieldtype: 'Int',
       placeholder: '0',
     },
     {
@@ -55,6 +55,7 @@ export default {
       fieldname: 'description',
       label: 'Descripcion',
       placeholder: 'Description del Producto',
+      default: '',
       fieldtype: 'Text',
     },
     {
