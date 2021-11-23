@@ -26,7 +26,6 @@
     "csvjson-csv2json": "^5.0.6",
     "electron-store": "^8.0.1",
     "frappe-charts": "1.6.1",
-    "frappejs": "github:frappe/frappejs",
     "knex": "^0.95.12",
     "lodash": "^4.17.21",
     "luxon": "^2.0.2",
