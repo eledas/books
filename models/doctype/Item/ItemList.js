@@ -6,7 +6,7 @@ export default {
   columns: [
     'name',
     'unit',
-    'tax',
+    'amount',
     'rate',
   ]
 }
