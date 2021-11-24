@@ -69,7 +69,7 @@
       v-if="doc"
       :doc="doc"
       :fields="fields"
-      :autosave="true"
+      :autosave="false"
       :column-ratio="[1.1, 2]"
     />
     <component v-if="doc && quickEditWidget" :is="quickEditWidget" />
@@ -185,7 +185,6 @@ export default {
         });
         this.doc.on('beforeUpdate', () => {
           this.statusText = _('Saving...');
-      console.log(value+";;;;;")
         });
         this.doc.on('afterUpdate', () => {
           setTimeout(() => {
@@ -203,7 +202,7 @@ export default {
       if(this.doc._notInserted){
         this.$refs.form.insert();
       }else{
-       // this.$refs.form.onChange(df, value);
+        this.doc.update();
       }
     },
     async submitDoc() {
