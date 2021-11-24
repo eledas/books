@@ -21,9 +21,10 @@ export default {
       return this.column.render(this.doc);
     },
     cellClass() {
-      return ['Int', 'Float', 'Currency'].includes(this.column.fieldtype)
-        ? 'justify-end'
-        : '';
+     /* return ['Int', 'Float', 'Currency'].includes(this.column.fieldtype)
+        ? ''
+        : '';*/
+        return '';
     }
   }
 };

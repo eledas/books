@@ -11,10 +11,10 @@
           v-for="column in columns"
           :key="column.label"
           class="py-4 truncate"
-          :class="
-            ['Float', 'Currency'].includes(column.fieldtype) ? 'text-right' : ''
-          "
+          :class="''"
+          
         >
+        <!--:class="['Float', 'Currency'].includes(column.fieldtype) ? 'text-right' : ''" -->
           {{ column.label }}
         </div>
       </Row>
@@ -38,7 +38,7 @@
             v-for="column in columns"
             :key="column.label"
             :class="{
-              'text-right': ['Float', 'Currency'].includes(column.fieldtype)
+              //'text-right': ['Float', 'Currency'].includes(column.fieldtype)
             }"
             :doc="doc"
             :column="column"
