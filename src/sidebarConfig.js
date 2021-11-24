@@ -18,10 +18,16 @@ const config = {
       title: _('Dashboard'),
       route: '/',
       icon: getIcon('dashboard')
-    },  {
+    },  
+    {
       title: _('Inventario'),
-      icon: getIcon('sales'),
-      route: '/list/Item',
+      icon: getIcon('item'),
+      route: '/list/Item'
+    },
+    {
+      title: _('Proveedores'),
+      icon: getIcon('supplier'),
+      route: '/list/Supplier'
     },
     {
       title: _('Sales'),
