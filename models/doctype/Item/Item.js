@@ -91,6 +91,64 @@ export default {
         }
       },
     },
+    {
+      fieldname: 'incomeAccount',
+      label: 'Income',
+      fieldtype: 'Link',
+      target: 'Account',
+      placeholder: 'Sales',
+      required: 1,
+      disableCreation: true,
+      getFilters: () => {
+        return {
+          isGroup: 0,
+          rootType: 'Income',
+        };
+      },
+      formulaDependsOn: ['itemType'],
+      async formula(doc) {
+        let accountName = 'Service';
+        if (doc.itemType === 'Product') {
+          accountName = 'Sales';
+        }
+
+        const accountExists = await frappe.db.exists('Account', accountName);
+        return accountExists ? accountName : '';
+      },
+    },
+    {
+      fieldname: 'expenseAccount',
+      label: 'Expense',
+      fieldtype: 'Link',
+      target: 'Account',
+      placeholder: 'Select Account',
+      required: 1,
+      disableCreation: true,
+      getFilters: () => {
+        return {
+          isGroup: 0,
+          rootType: 'Expense',
+        };
+      },
+      formulaDependsOn: ['itemType'],
+      async formula() {
+        const cogs = await frappe.db
+          .knex('Account')
+          .where({ accountType: 'Cost of Goods Sold' });
+        if (cogs.length === 0) {
+          return '';
+        } else {
+          return cogs[0].name;
+        }
+      },
+    },
+    {
+      fieldname: 'tax',
+      label: 'Tax',
+      fieldtype: 'Link',
+      target: 'Tax',
+      placeholder: 'GST',
+    }
   ],
   quickEditFields: [
     'barCode',

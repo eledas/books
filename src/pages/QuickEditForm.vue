@@ -16,10 +16,10 @@
           :icon="true"
           @click="insertDoc"
           type="primary"
-          v-if="doc && doc._notInserted"
+          v-if="doc"
           class="ml-2 text-white text-xs"
         >
-          {{ _('Save') }}
+          {{ doc._notInserted?_('Crear'):_('Guardar Cambios') }}
         </Button>
         <Button
           :icon="true"
@@ -127,7 +127,8 @@ export default {
     },
     status() {
       if (this.doc && this.doc._notInserted) {
-        return "Draft";
+        return "";
+        //return "Draft";
       }
       return "";
     },
@@ -184,6 +185,7 @@ export default {
         });
         this.doc.on('beforeUpdate', () => {
           this.statusText = _('Saving...');
+      console.log(value+";;;;;")
         });
         this.doc.on('afterUpdate', () => {
           setTimeout(() => {
@@ -198,7 +200,11 @@ export default {
       this.$refs.form.onChange(df, value);
     },
     insertDoc() {
-      this.$refs.form.insert();
+      if(this.doc._notInserted){
+        this.$refs.form.insert();
+      }else{
+       // this.$refs.form.onChange(df, value);
+      }
     },
     async submitDoc() {
       try {

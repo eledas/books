@@ -66,7 +66,7 @@ const config = {
           doctype: 'PurchaseInvoice'
         },
         {
-          label: _('Suppliers'),
+          label: _('Proveedores'),
           route: '/list/Supplier',
           doctype: 'Supplier'
         },

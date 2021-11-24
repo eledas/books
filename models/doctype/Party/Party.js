@@ -8,10 +8,16 @@ export default {
   fields: [
     {
       fieldname: 'name',
-      label: 'Name',
+      label: 'Nombre',
       fieldtype: 'Data',
       required: 1,
-      placeholder: 'Full Name',
+      placeholder: 'Nombre',
+    },
+    {
+      fieldname: 'company',
+      label: 'Empresa',
+      fieldtype: 'Data',
+      placeholder: 'Empresa',
     },
     {
       fieldname: 'image',
@@ -64,28 +70,28 @@ export default {
     },
     {
       fieldname: 'email',
-      label: 'Email',
+      label: 'Correo Electronico',
       fieldtype: 'Data',
-      placeholder: 'john@doe.com',
+      placeholder: 'TotoGuapo@gmail.com',
       validate: {
         type: 'email',
       },
     },
     {
       fieldname: 'phone',
-      label: 'Phone',
+      label: 'Celular',
       fieldtype: 'Data',
-      placeholder: 'Phone',
+      placeholder: 'Celular',
       validate: {
         type: 'phone',
       },
     },
     {
       fieldname: 'address',
-      label: 'Address',
+      label: 'Direccion',
       fieldtype: 'Link',
       target: 'Address',
-      placeholder: _('Click to create'),
+      placeholder: _('Click para Crear'),
       inline: true,
     },
     {
@@ -112,9 +118,7 @@ export default {
   quickEditFields: [
     'email',
     'phone',
+    'company',
     'address',
-    'defaultAccount',
-    'currency',
-    'gstin',
   ],
 };
