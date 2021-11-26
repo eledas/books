@@ -35,7 +35,7 @@ const config = {
       route: '/list/SalesInvoice',
       items: [
         {
-          label: _('Invoices'),
+          label: _('Ventas'),
           route: '/list/SalesInvoice',
           doctype: 'SalesInvoice'
         },

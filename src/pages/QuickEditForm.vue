@@ -11,33 +11,7 @@
       </div>
       <div class="flex items-stretch">
         <DropdownWithActions :actions="actions" />
-        <StatusBadge :status="status" />
-        <Button
-          :icon="true"
-          @click="insertDoc"
-          type="primary"
-          v-if="doc"
-          class="ml-2 text-white text-xs"
-        >
-          {{ doc._notInserted?_('Crear'):_('Guardar Cambios') }}
-        </Button>
-        <Button
-          :icon="true"
-          @click="submitDoc"
-          type="primary"
-          v-if="
-            meta &&
-            meta.isSubmittable &&
-            doc &&
-            !doc.submitted &&
-            !doc._notInserted &&
-            !(doc.cancelled || false)
-          "
-          class="ml-2 text-white text-xs"
-        >
-          {{ _('Submit') }}
-        </Button>
-      </div>
+        <StatusBadge :status="status" /></div>
     </div>
     <div class="px-4 pt-2 pb-4 flex-center" v-if="doc">
       <div class="flex flex-col items-center">
@@ -72,6 +46,36 @@
       :autosave="false"
       :column-ratio="[1.1, 2]"
     />
+    <div class="flex items-center justify-between px-4 pt-4">
+      <div class="flex items-center"></div>
+      <div class="flex items-stretch">
+        <Button
+          :icon="true"
+          @click="insertDoc"
+          type="primary"
+          v-if="doc"
+          class="ml-2 text-white text-xs"
+        >
+          {{ doc._notInserted ? _('Crear') : _('Guardar Cambios') }}
+        </Button>
+        <Button
+          :icon="true"
+          @click="submitDoc"
+          type="primary"
+          v-if="
+            meta &&
+            meta.isSubmittable &&
+            doc &&
+            !doc.submitted &&
+            !doc._notInserted &&
+            !(doc.cancelled || false)
+          "
+          class="ml-2 text-white text-xs"
+        >
+          {{ _('Submit') }}
+        </Button>
+      </div>
+    </div>
     <component v-if="doc && quickEditWidget" :is="quickEditWidget" />
   </div>
 </template>
@@ -127,10 +131,10 @@ export default {
     },
     status() {
       if (this.doc && this.doc._notInserted) {
-        return "";
+        return '';
         //return "Draft";
       }
-      return "";
+      return '';
     },
     fields() {
       return this.meta
@@ -199,9 +203,9 @@ export default {
       this.$refs.form.onChange(df, value);
     },
     insertDoc() {
-      if(this.doc._notInserted){
+      if (this.doc._notInserted) {
         this.$refs.form.insert();
-      }else{
+      } else {
         this.doc.update();
       }
     },

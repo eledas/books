@@ -124,7 +124,7 @@ export function deleteDocWithPrompt(doc) {
       description: _('This action is permanent'),
       buttons: [
         {
-          label: _('Delete'),
+          label: _('Eliminar'),
           action: () => {
             doc
               .delete()
@@ -255,7 +255,7 @@ export function getActionsForDocument(doc) {
 
   let deleteAction = {
     component: {
-      template: `<span class="text-red-700">{{ _('Delete') }}</span>`,
+      template: `<span class="text-red-700">{{ _('Eliminar') }}</span>`,
     },
     condition: (doc) => !doc.isNew() && !doc.submitted && !doc.meta.isSingle && !doc.cancelled,
     action: () =>

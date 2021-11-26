@@ -4,9 +4,8 @@ export default {
   doctype: 'Item',
   title: _('Productos'),
   columns: [
-    'barCode',
     'name',
-    'unit',
+    'barCode',
     'amount',
     'dateExpired',
     'rate',

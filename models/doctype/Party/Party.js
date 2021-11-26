@@ -119,6 +119,5 @@ export default {
     'email',
     'phone',
     'company',
-    'address',
   ],
 };

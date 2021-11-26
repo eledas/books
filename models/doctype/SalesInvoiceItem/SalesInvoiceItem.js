@@ -55,7 +55,7 @@ export default {
       formula: (row, doc) => row.rate * doc.exchangeRate,
       readOnly: 1
     },
-    {
+    /*{
       fieldname: 'account',
       label: 'Account',
       hidden: 1,
@@ -63,7 +63,7 @@ export default {
       target: 'Account',
       required: 1,
       formula: (row, doc) => doc.getFrom('Item', row.item, 'incomeAccount')
-    },
+    },*/
     {
       fieldname: 'tax',
       label: 'Tax',

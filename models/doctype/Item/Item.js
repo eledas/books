@@ -13,7 +13,7 @@ export default {
       fieldtype: 'Data',
       placeholder: 'Nombre',
       required: 1,
-    },    
+    },
     {
       fieldname: 'barCode',
       label: 'Codigo de Barras',
@@ -25,7 +25,7 @@ export default {
       label: 'Fecha Vencimiento',
       fieldtype: 'Date',
       placeholder: 'Fecha Vencimiento',
-    },    
+    },
     {
       fieldname: 'supplier',
       label: 'Proveedor',
@@ -38,12 +38,14 @@ export default {
       fieldname: 'amount',
       label: 'Existencia',
       fieldtype: 'Int',
+      default: '0',
       placeholder: '0',
     },
     {
       fieldname: 'minAmount',
       label: 'Existencia Minima',
       fieldtype: 'Int',
+      default: 0.0,
       placeholder: '0',
     },
     {
@@ -55,7 +57,7 @@ export default {
       fieldname: 'description',
       label: 'Descripcion',
       placeholder: 'Description del Producto',
-      default: '',
+      default: '...',
       fieldtype: 'Text',
     },
     {
@@ -66,14 +68,23 @@ export default {
       options: ['NA', 'Kg', 'Gram', 'Hour', 'Day'],
     },
     {
+      fieldname: 'itemType',
+      label: 'Type',
+      placeholder: 'Sales',
+      fieldtype: 'Select',
+      default: 'Product',
+      options: ['Product', 'Service'],
+    },
+    {
       fieldname: 'rate',
-      label: 'Precion venta',
+      label: 'Precio venta',
       fieldtype: 'Currency',
       placeholder: '0.00',
+      default: 0,
       validate(value) {
         if (!value) {
           throw new frappe.errors.ValidationError(
-            'Rate must be greater than 0'
+            'El precio de venta debe de ser mayor a Q0.00'
           );
         }
       },
@@ -83,13 +94,7 @@ export default {
       label: 'Precion Costo',
       fieldtype: 'Currency',
       placeholder: '0.00',
-      validate(value) {
-        if (!value) {
-          throw new frappe.errors.ValidationError(
-            'Rate must be greater than 0'
-          );
-        }
-      },
+      default: 0
     },
     {
       fieldname: 'incomeAccount',
@@ -97,7 +102,8 @@ export default {
       fieldtype: 'Link',
       target: 'Account',
       placeholder: 'Sales',
-      required: 1,
+      required: 0,
+      default: 'Activos - 1',
       disableCreation: true,
       getFilters: () => {
         return {
@@ -107,10 +113,11 @@ export default {
       },
       formulaDependsOn: ['itemType'],
       async formula(doc) {
-        let accountName = 'Service';
+        let accountName = 'Sales';
+        /*let accountName = 'Service';
         if (doc.itemType === 'Product') {
           accountName = 'Sales';
-        }
+        }*/
 
         const accountExists = await frappe.db.exists('Account', accountName);
         return accountExists ? accountName : '';
@@ -123,6 +130,7 @@ export default {
       target: 'Account',
       placeholder: 'Select Account',
       required: 1,
+      default: 'Activos - 1',
       disableCreation: true,
       getFilters: () => {
         return {
@@ -157,19 +165,19 @@ export default {
     'amount',
     'minAmount',
     'dateExpired',
-    'unit',
     'supplier',
     'description',
   ],
   actions: [
     {
-      label: _('New Invoice'),
+      label: _('Nueva Venta'),
       condition: (doc) => !doc.isNew(),
       action: async (doc, router) => {
         const invoice = await frappe.getNewDoc('SalesInvoice');
         invoice.append('items', {
           item: doc.name,
-          rate: doc.rate
+          rate: doc.rate,
+          tax: doc.tax,
         });
         router.push(`/edit/SalesInvoice/${invoice.name}`);
       },
@@ -181,7 +189,8 @@ export default {
         const invoice = await frappe.getNewDoc('PurchaseInvoice');
         invoice.append('items', {
           item: doc.name,
-          rate: doc.rate
+          rate: doc.rate,
+          tax: doc.tax,
         });
         router.push(`/edit/PurchaseInvoice/${invoice.name}`);
       },

@@ -12,9 +12,8 @@
           :key="column.label"
           class="py-4 truncate"
           :class="''"
-          
         >
-        <!--:class="['Float', 'Currency'].includes(column.fieldtype) ? 'text-right' : ''" -->
+          <!--:class="['Float', 'Currency'].includes(column.fieldtype) ? 'text-right' : ''" -->
           {{ column.label }}
         </div>
       </Row>
@@ -70,18 +69,18 @@ export default {
     Row,
     ListCell,
     Avatar,
-    Button
+    Button,
   },
   watch: {
     listConfig(oldValue, newValue) {
       if (oldValue.doctype !== newValue.doctype) {
         this.setupColumnsAndData();
       }
-    }
+    },
   },
   data() {
     return {
-      data: []
+      data: [],
     };
   },
   computed: {
@@ -93,7 +92,7 @@ export default {
     },
     hasImage() {
       return this.meta.hasField('image');
-    }
+    },
   },
   async mounted() {
     await this.setupColumnsAndData();
@@ -113,7 +112,7 @@ export default {
       }
       openQuickEdit({
         doctype: this.doctype,
-        name: doc.name
+        name: doc.name,
       });
     },
     async updateData(filters) {
@@ -122,7 +121,7 @@ export default {
         doctype: this.doctype,
         fields: ['*'],
         filters,
-        orderBy: 'creation'
+        orderBy: 'creation',
       });
     },
     getFilters() {
@@ -133,7 +132,7 @@ export default {
     },
     prepareColumns() {
       return this.listConfig.columns
-        .map(col => {
+        .map((col) => {
           if (typeof col === 'string') {
             const field = this.meta.getField(col);
             if (!field) return null;
@@ -142,7 +141,7 @@ export default {
           return col;
         })
         .filter(Boolean);
-    }
-  }
+    },
+  },
 };
 </script>

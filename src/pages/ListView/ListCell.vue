@@ -13,8 +13,15 @@ export default {
   computed: {
     columnValue() {
       let { column, doc } = this;
-      let value = doc[column.fieldname];
-      return frappe.format(value, column, doc);
+      let columnAux = Object.assign({}, column);
+
+      let value = doc[column.fieldname]?doc[column.fieldname]:'';
+      if(column.fieldname==='dateExpired'&&!doc[column.fieldname]){
+        return 'No Vence';
+        
+      }
+
+      return frappe.format(value, columnAux);
     },
     customRenderer() {
       if (!this.column.render) return;
@@ -24,7 +31,7 @@ export default {
      /* return ['Int', 'Float', 'Currency'].includes(this.column.fieldtype)
         ? ''
         : '';*/
-        return '';
+        return 'adfas';
     }
   }
 };

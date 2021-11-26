@@ -64,7 +64,7 @@ export default {
       }
     },
     {
-      label: 'Delete',
+      label: 'Eliminar',
       condition: form => !form.doc._notInserted,
       action: async form => {
         const doc = await frappe.getDoc('GSTR3B', form.doc.name);

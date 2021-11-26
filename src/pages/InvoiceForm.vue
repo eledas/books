@@ -33,7 +33,7 @@
     <div class="flex justify-center flex-1 mb-8 mt-2" v-if="meta">
       <div
         class="border rounded-lg shadow h-full flex flex-col justify-between"
-        style="width: 600px"
+        style="width: 900px"
       >
         <div>
           <div class="px-6 pt-6" v-if="printSettings">
@@ -63,13 +63,13 @@
               {{
                 doc._notInserted
                   ? doc.doctype === 'SalesInvoice'
-                    ? _('New Invoice')
+                    ? _('Nueva Venta')
                     : _('New Bill')
                   : doc.name
               }}
             </h1>
             <div class="flex justify-between mt-2">
-              <div class="w-1/3">
+              <!--<div class="w-1/3">
                 <FormControl
                   class="text-base"
                   input-class="bg-gray-100 p-2 text-lg font-semibold"
@@ -91,7 +91,7 @@
                   @change="(value) => doc.set('account', value)"
                   :read-only="doc.submitted"
                 />
-              </div>
+              </div>-->
               <div class="w-1/3">
                 <FormControl
                   input-class="bg-gray-100 px-3 py-2 text-base text-right"
@@ -104,15 +104,53 @@
               </div>
             </div>
           </div>
-          <div class="px-6 text-base">
-            <FormControl
-              :df="meta.getField('items')"
-              :value="doc.items"
-              :showHeader="true"
-              :max-rows-before-overflow="4"
-              @change="(value) => doc.set('items', value)"
-              :read-only="doc.submitted"
-            />
+          <div class="mt-8 px-6">
+            buscar producto
+            <div class="flex justify-between mt-2">
+              <div class="w-2/3">
+                <FormControl
+                  class="mt-2 text-base"
+                  input-class="bg-gray-100 px-10 py-2 text-base"
+                  :df="meta.getField('account')"
+                  :value="doc.account"
+                  :placeholder="'Producto'"
+                  :read-only="doc.submitted"
+                />
+              </div>
+              <div class="w-1/3">
+                <FormControl
+                  class="mt-2 text-base"
+                  input-class="bg-gray-100 px-3 py-2 text-base"
+                  :df="meta.getField('account')"
+                  :value="doc.account"
+                  :placeholder="'Cantidad'"
+                  :read-only="doc.submitted"
+                />
+              </div>
+              <div class="w-1/3">
+                <Button
+                  :icon="true"
+                  @click="insertDoc"
+                  type="primary"
+                  v-if="doc"
+                  class="ml-2 text-white text-xs"
+                >
+                  {{ _('Agregar Producto') }}
+                </Button>
+              </div>
+              <Tabla></Tabla>
+            </div>
+            <div class="mt-8 px-6">
+              Productos a vender
+              <FormControl
+                :df="meta.getField('items')"
+                :value="doc.items"
+                :showHeader="true"
+                :max-rows-before-overflow="4"
+                @change="(value) => doc.set('items', value)"
+                :read-only="doc.submitted"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -189,6 +227,7 @@
 </template>
 <script>
 import frappe from 'frappejs';
+import Tabla from '../components/Controls/Table.vue'
 import StatusBadge from '@/components/StatusBadge';
 import PageHeader from '@/components/PageHeader';
 import Button from '@/components/Button';
@@ -201,13 +240,14 @@ import {
   getActionsForDocument,
   getInvoiceStatus,
   showMessageDialog,
-  routeTo
+  routeTo,
 } from '@/utils';
 
 export default {
   name: 'InvoiceForm',
   props: ['doctype', 'name'],
   components: {
+    Tabla,
     PageHeader,
     StatusBadge,
     Button,
