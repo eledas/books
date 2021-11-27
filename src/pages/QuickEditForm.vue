@@ -11,7 +11,8 @@
       </div>
       <div class="flex items-stretch">
         <DropdownWithActions :actions="actions" />
-        <StatusBadge :status="status" /></div>
+        <StatusBadge :status="status" />
+      </div>
     </div>
     <div class="px-4 pt-2 pb-4 flex-center" v-if="doc">
       <div class="flex flex-col items-center">
@@ -45,19 +46,11 @@
       :fields="fields"
       :autosave="false"
       :column-ratio="[1.1, 2]"
+      :type=2
     />
     <div class="flex items-center justify-between px-4 pt-4">
       <div class="flex items-center"></div>
       <div class="flex items-stretch">
-        <Button
-          :icon="true"
-          @click="insertDoc"
-          type="primary"
-          v-if="doc"
-          class="ml-2 text-white text-xs"
-        >
-          {{ doc._notInserted ? _('Crear') : _('Guardar Cambios') }}
-        </Button>
         <Button
           :icon="true"
           @click="submitDoc"
@@ -202,13 +195,6 @@ export default {
     valueChange(df, value) {
       this.$refs.form.onChange(df, value);
     },
-    insertDoc() {
-      if (this.doc._notInserted) {
-        this.$refs.form.insert();
-      } else {
-        this.doc.update();
-      }
-    },
     async submitDoc() {
       try {
         await this.$refs.form.submit();
@@ -229,7 +215,7 @@ export default {
         }
         input.size = valueLength;
       }
-    },
+    }
   },
 };
 </script>

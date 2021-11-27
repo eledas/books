@@ -1,3 +1,4 @@
+
 <template>
   <div class="text-sm" :class="{ 'border-t': !noBorder }">
     <template v-for="df in formFields">
@@ -87,6 +88,22 @@
         </div>
       </template>
     </template>
+    <div class="flex items-center justify-between px-4 pt-4">
+      <div class="flex items-center"></div>
+      <div class="flex items-stretch">
+        <Button
+          :icon="true"
+          @click="onChangeButton"
+          type="primary"
+          v-if="doc"
+          ref="controls"
+          :read-only="submitted"
+          class="ml-2 text-white text-xs"
+        >
+          {{ doc._notInserted ? _('Crear') : _('Guardar Cambios') }}
+        </Button>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -122,6 +139,7 @@ let TwoColumnForm = {
       doctype: this.doc.doctype,
       name: this.doc.name,
       doc: this.doc,
+      newName: '',
     };
   },
   components: {
@@ -135,9 +153,29 @@ let TwoColumnForm = {
     }
   },
   methods: {
+    async onChangeButton() {
+      if (this.doc._notInserted) {
+        this.$refs.form.insert();
+        return;
+      } else {
+        console.log(this.doc)
+        await this.doc.update();
+        await this.doc.rename(this.newName);
+        console.log('asdfdsafafsdfads')
+      }
+/*
+      if (this.doc._dirty && !this.doc.isNew()) {
+      }
+
+      // handle rename
+      if (!this.doc.isNew() && this.newName != this.doc.get('name')) {
+      }*/
+    },
     onChange(df, value) {
+      const isfalse = false;
+
       if (value == null) {
-        return
+        return;
       }
 
       let oldValue = this.doc.get(df.fieldname);
@@ -147,8 +185,10 @@ let TwoColumnForm = {
       }
 
       // handle rename
-      if (this.autosave && df.fieldname === 'name' && !this.doc.isNew()) {
-        return this.doc.rename(value);
+      if (df.fieldname === 'name' && !this.doc.isNew()) {
+        this.newName = value;
+        return;
+        //return this.doc.rename(value);
       }
 
       // reset error messages
@@ -159,11 +199,11 @@ let TwoColumnForm = {
         this.$set(this.errors, df.fieldname, getErrorMessage(e, this.doc));
       });
 
-      if (this.autosave && this.doc._dirty && !this.doc.isNew()) {
+      if (isfalse && this.doc._dirty && !this.doc.isNew()) {
         if (df.fieldtype === 'Table') {
           return;
         }
-        this.doc.update();
+        //this.doc.update();
       }
     },
     insertOrUpdate() {
