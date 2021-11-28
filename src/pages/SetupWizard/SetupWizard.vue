@@ -47,12 +47,10 @@
       <TwoColumnForm :fields="fields" :doc="doc" />
     </div>
     <div class="flex justify-end px-8 mt-5 window-no-drag">
-      <Button
-        @click="submit"
-        type="primary"
-        class="text-sm text-white"
+      <Button @click="submit" type="primary" class="text-sm text-white">
+        <!--
         :disabled="!valuesFilled || loading"
-      >
+      -->
         {{ buttonText }}
       </Button>
     </div>
@@ -121,10 +119,10 @@ export default {
       return values.every(Boolean);
     },
     async submit() {
-      if (!this.allValuesFilled()) {
+      /*if (!this.allValuesFilled()) {
         showMessageDialog({ message: this._('Please fill all values') });
         return;
-      }
+      }*/
 
       try {
         this.loading = true;
@@ -168,7 +166,7 @@ export default {
       return this.meta.getQuickEditFields();
     },
     buttonText() {
-      return this.loading ? this._('Setting Up...') : this._('Next');
+      return this.loading ? this._('Configurando Sistema...') : this._('Siguiente');
     },
   },
 };

@@ -53,19 +53,14 @@
       <div class="flex items-stretch">
         <Button
           :icon="true"
-          @click="submitDoc"
+          @click="onChangeButton"
           type="primary"
-          v-if="
-            meta &&
-            meta.isSubmittable &&
-            doc &&
-            !doc.submitted &&
-            !doc._notInserted &&
-            !(doc.cancelled || false)
-          "
+          v-if="doc&&doc._notInserted"
+          ref="controls"
+          :read-only="submitted"
           class="ml-2 text-white text-xs"
         >
-          {{ _('Submit') }}
+          {{ _('Crear') }}
         </Button>
       </div>
     </div>
@@ -145,6 +140,11 @@ export default {
     },
   },
   methods: {
+     async onChangeButton() {
+      if (this.doc._notInserted) {
+        this.$refs.form.insert();
+      }
+    },
     async fetchMetaAndDoc() {
       this.titleField = this.meta.getField(this.meta.titleField);
       this.imageField = this.meta.getField('image');

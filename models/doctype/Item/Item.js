@@ -1,6 +1,16 @@
 import frappe from 'frappejs';
 import { _ } from 'frappejs/utils';
 
+const getSuppliers = async () => {
+  const suppliers = await frappe.db.knex('Party');
+  const list = suppliers.map(
+    (item) => `${item.name} - ${item.phone || '########'}`
+  );
+  list.push('NA')
+  console.log(list)
+  return list;
+}
+
 export default {
   name: 'Item',
   doctype: 'DocType',
@@ -29,10 +39,16 @@ export default {
     {
       fieldname: 'supplier',
       label: 'Proveedor',
-      fieldtype: 'Select',
+      fieldtype: 'Link',
       placeholder: 'Proveedor',
-      default: 'NA',
-      options: ['NA']
+      //options: () => { this.getSuppliers2() }
+      //default: 'NA',
+      target: 'Party'
+      /*
+       fieldname: 'tax',
+      target: 'Tax',
+      placeholder: 'GST',
+      */
     },
     {
       fieldname: 'amount',
@@ -196,6 +212,17 @@ export default {
       },
     },
   ],
+  methods: {
+    async getSuppliers2() {
+      const suppliers = await frappe.db.knex('Party');
+      const list = suppliers.map(
+        (item) => `${item.name} - ${item.phone || '########'}`
+      );
+      list.push('NA')
+      console.log(list)
+      return list;
+    }
+  }
 };
 
 

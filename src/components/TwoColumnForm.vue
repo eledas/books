@@ -95,12 +95,12 @@
           :icon="true"
           @click="onChangeButton"
           type="primary"
-          v-if="doc"
+          v-if="doc && !doc._notInserted"
           ref="controls"
           :read-only="submitted"
           class="ml-2 text-white text-xs"
         >
-          {{ doc._notInserted ? _('Crear') : _('Guardar Cambios') }}
+          {{ _('Guardar Cambios') }}
         </Button>
       </div>
     </div>
@@ -154,22 +154,10 @@ let TwoColumnForm = {
   },
   methods: {
     async onChangeButton() {
-      if (this.doc._notInserted) {
-        this.$refs.form.insert();
-        return;
-      } else {
-        console.log(this.doc)
+      if (!this.doc._notInserted) {
         await this.doc.update();
         await this.doc.rename(this.newName);
-        console.log('asdfdsafafsdfads')
       }
-/*
-      if (this.doc._dirty && !this.doc.isNew()) {
-      }
-
-      // handle rename
-      if (!this.doc.isNew() && this.newName != this.doc.get('name')) {
-      }*/
     },
     onChange(df, value) {
       const isfalse = false;
