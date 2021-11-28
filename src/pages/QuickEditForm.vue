@@ -47,23 +47,8 @@
       :autosave="false"
       :column-ratio="[1.1, 2]"
       :type=2
+      @crear="crearElemento"
     />
-    <div class="flex items-center justify-between px-4 pt-4">
-      <div class="flex items-center"></div>
-      <div class="flex items-stretch">
-        <Button
-          :icon="true"
-          @click="onChangeButton"
-          type="primary"
-          v-if="doc&&doc._notInserted"
-          ref="controls"
-          :read-only="submitted"
-          class="ml-2 text-white text-xs"
-        >
-          {{ _('Crear') }}
-        </Button>
-      </div>
-    </div>
     <component v-if="doc && quickEditWidget" :is="quickEditWidget" />
   </div>
 </template>
@@ -140,7 +125,7 @@ export default {
     },
   },
   methods: {
-     async onChangeButton() {
+     async crearElemento() {
       if (this.doc._notInserted) {
         this.$refs.form.insert();
       }

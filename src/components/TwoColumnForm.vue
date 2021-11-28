@@ -95,12 +95,12 @@
           :icon="true"
           @click="onChangeButton"
           type="primary"
-          v-if="doc && !doc._notInserted"
+          v-if="doc"
           ref="controls"
           :read-only="submitted"
           class="ml-2 text-white text-xs"
         >
-          {{ _('Guardar Cambios') }}
+          {{!doc._notInserted? _('Guardar Cambios'):_('Crear') }}
         </Button>
       </div>
     </div>
@@ -157,6 +157,8 @@ let TwoColumnForm = {
       if (!this.doc._notInserted) {
         await this.doc.update();
         await this.doc.rename(this.newName);
+      }else{
+         this.$emit('crear')
       }
     },
     onChange(df, value) {
