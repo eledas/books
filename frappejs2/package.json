@@ -1,0 +1,75 @@
+{
+  "name": "frappejs",
+  "version": "0.0.10",
+  "description": "Frappe.js Version 1",
+  "main": "index.js",
+  "bin": {
+    "frappe": "cli.js"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha --timeout 3000 tests --exit",
+    "test-watch": "NODE_ENV=test mocha --timeout 3000 tests --watch --reporter=min"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
+    "body-parser": "^1.19.0",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "commander": "^8.3.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.0",
+    "electron": "^15.3.0",
+    "express": "^4.17.1",
+    "feather-icons": "^4.28.0",
+    "html-webpack-plugin": "^5.5.0",
+    "knex": "^0.95.12",
+    "lodash": "^4.17.21",
+    "luxon": "^2.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "node-fetch": "^3.0.0",
+    "nunjucks": "^3.2.3",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
+    "sass-loader": "^12.3.0",
+    "socket.io": "^4.3.1",
+    "sqlite3": "^5.0.2",
+    "tailwindcss": "^2.2.19",
+    "vue": "^2.6.10",
+    "vue-flatpickr-component": "^9.0.5",
+    "vue-loader": "^15.9.8",
+    "vue-router": "^3.5.3",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.61.0",
+    "webpack-dev-server": "^4.4.0",
+    "webpack-hot-middleware": "^2.25.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frappe/frappejs.git"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "author": "Frappe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frappe/frappejs/issues"
+  },
+  "homepage": "https://github.com/frappe/frappejs#readme",
+  "devDependencies": {
+    "electron-download": "^4.1.1",
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=16.4.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
