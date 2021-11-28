@@ -26,13 +26,13 @@
 <script>
 import frappe from 'frappejs';
 import Base from './Base';
-import DatePicker from '../DatePicker/DatePicker';
+//import DatePicker from '../DatePicker/DatePicker';
 
 export default {
   name: 'Date',
   extends: Base,
   components: {
-    DatePicker,
+    //DatePicker,
   },
   data() {
     return {

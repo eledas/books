@@ -121,8 +121,9 @@ export default {
         doctype: this.doctype,
         fields: ['*'],
         filters,
-        orderBy: 'creation',
+        orderBy: 'name',
       });
+      this.data = this.data.reverse();
     },
     getFilters() {
       let filters = {};

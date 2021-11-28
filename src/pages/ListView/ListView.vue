@@ -96,6 +96,7 @@ export default {
       if (listConfigs[this.doctype]) {
         return listConfigs[this.doctype];
       } else {
+        console.log(2,this.meta.getKeywordFields())
         return {
           title: this.doctype,
           doctype: this.doctype,
