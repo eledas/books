@@ -15,32 +15,44 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'secondary'
+      default: 'secondary',
     },
     icon: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     style() {
+      let color = '';
+      switch (this.type) {
+        case 'primary':
+          color = '#2C9AF1 0%, #2490EF';
+          break;
+        case 'secondary':
+          color = '#F9F9FA 0%, #F4F4F6';
+          break;
+        case 'tird':
+          color = '#2cf146 0%, #1bb500';
+          break;
+        default:
+          color = '#F9F9FA 0%, #F4F4F6';
+          break;
+      }
       return {
         padding: this.icon ? '6px 12px' : '6px 24px',
-        'background-image':
-          this.type === 'primary'
-            ? 'linear-gradient(180deg, #2C9AF1 0%, #2490EF 100%)'
-            : 'linear-gradient(180deg, #F9F9FA 0%, #F4F4F6 100%)'
+        'background-image': `linear-gradient(180deg, ${color} 100%)`,
       };
     },
     _class() {
       return {
-        'opacity-50 cursor-not-allowed pointer-events-none': this.disabled
+        'opacity-50 cursor-not-allowed pointer-events-none': this.disabled,
       };
-    }
-  }
+    },
+  },
 };
 </script>

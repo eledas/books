@@ -106,34 +106,95 @@
           </div>
           <div class="mt-8 px-6">
             buscar producto
-            <div class="flex justify-between mt-2">
-              <div class="w-2/3">
-                <FormControl
+            <br/>
+            <div class="flex justify-between mt-5">
+              <div class="w-2/4 px-2">
+                <!--<FormControl
                   class="mt-2 text-base"
                   input-class="bg-gray-100 px-10 py-2 text-base"
                   :df="meta.getField('account')"
                   :value="doc.account"
                   :placeholder="'Producto'"
                   :read-only="doc.submitted"
-                />
+                />-->
+                
+                <div class="input-container ic1">
+                  <input
+                    class="input1
+                    mt-2
+                    w-full
+                    text-base
+                    bg-gray-100
+                    px-3
+                    py-2
+                    text-base
+                    rounded"
+                    placeholder=" "
+                    type="text"
+                    v-model="producto"
+                    @keyup="buscarProductos"
+                  />
+                  <label class="bg-gray-100 placeholder text-base"
+                    >Productos</label
+                  >
+                </div>
               </div>
-              <div class="w-1/3">
-                <FormControl
-                  class="mt-2 text-base"
-                  input-class="bg-gray-100 px-3 py-2 text-base"
-                  :df="meta.getField('account')"
-                  :value="doc.account"
-                  :placeholder="'Cantidad'"
-                  :read-only="doc.submitted"
-                />
+              <div class="w-1/4 px-2">
+                <div class="input-container ic1">
+                  <input
+                    class="input2 
+                    mt-2
+                    w-full
+                    text-base
+                    bg-gray-100
+                    px-3
+                    py-2
+                    text-base
+                    rounded"
+                    placeholder=" "
+                    type="number"
+                    min="0"
+                    v-model="amount"
+                    @keyup="activateButton"
+                    @change="activateButton"
+                  />
+                  <label class="bg-gray-100 placeholder text-base"
+                    >Cantidad</label
+                  >
+                </div>
               </div>
-              <div class="w-1/3">
+              <div class="w-1/4 px-2">
+                <div class="input-container ic1">
+                  <input
+                    class="input3
+                    mt-2
+                    w-full
+                    text-base
+                    bg-gray-100
+                    px-3
+                    py-2
+                    text-base
+                    rounded"
+                    placeholder=" "
+                    type="number"
+                    min="0"
+                    v-model="newRate"
+                    @keyup="validateNewRate"
+                    @change="validateNewRate"
+                  />
+                  <label class="bg-gray-100 placeholder text-base"
+                    >Nuevo Precio</label
+                  >
+                </div>
+              </div>
+              <div class="w-2/4 mt-2 px-2">
                 <Button
                   :icon="true"
-                  @click="insertDoc"
-                  type="primary"
+                  @click="addItem"
+                  type="tird"
                   v-if="doc"
-                  class="ml-2 text-white text-xs"
+                  class="bg-success text-white text-md"
+                  :disabled="desactivateButton"
                 >
                   {{ _('Agregar Producto') }}
                 </Button>
@@ -227,7 +288,7 @@
 </template>
 <script>
 import frappe from 'frappejs';
-import Tabla from '../components/Controls/Table.vue'
+import Tabla from '../components/Controls/Table.vue';
 import StatusBadge from '@/components/StatusBadge';
 import PageHeader from '@/components/PageHeader';
 import Button from '@/components/Button';
@@ -268,6 +329,10 @@ export default {
       color: null,
       printSettings: null,
       companyName: null,
+      desactivateButton: false,
+      amount: 1,
+      newRate: null,
+      producto: ''
     };
   },
   computed: {
@@ -325,6 +390,22 @@ export default {
       );
       return this.doc.insertOrUpdate().catch(this.handleError);
     },
+    addItem(){
+      console.log(this.amount);
+      console.log(this.newRate);
+    },
+    validateNewRate(){
+      this.newRate = this.newRate >= 0? this.newRate: 1;
+    },
+    activateButton() {
+      this.amount = this.amount >= 0? this.amount: 1;
+      this.desactivateButton = this.amount < 1;
+      console.log(this.desactivateButton);
+    },
+    buscarProductos(){
+      
+      console.log('------',this.producto)
+    },
     onSubmitClick() {
       let message =
         this.doctype === 'SalesInvoice'
@@ -362,3 +443,42 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.placeholder {
+  color: #b4b4b4;
+  font-family: sans-serif;
+  left: 5px;
+  line-height: 0px;
+  position: absolute;
+  top: -10px;
+}
+
+
+.input1:not(:placeholder-shown) ~ .placeholder {
+  color: #000000;
+}
+.input2:not(:placeholder-shown) ~ .placeholder {
+  color: #000000;
+}
+.input3:not(:placeholder-shown) ~ .placeholder {
+  color: #000000;
+}
+
+.input1:focus ~ .placeholder {
+  color: #4780ca;
+}
+
+.input2:focus ~ .placeholder {
+  color: #5aca47;
+}
+
+.input3:focus ~ .placeholder {
+  color: #d18624;
+}
+</style>
