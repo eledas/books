@@ -30,105 +30,45 @@
         >
       </template>
     </PageHeader>
-    <div class="flex justify-center flex-1 mb-8 mt-2" v-if="meta">
-      <div
-        class="border rounded-lg shadow h-full flex flex-col justify-between"
-        style="width: 900px"
-      >
-        <div>
-          <div class="px-6 pt-6" v-if="printSettings">
-            <div class="flex text-sm text-gray-900 border-b pb-4">
-              <div class="w-1/3">
-                <div v-if="printSettings.displayLogo">
-                  <img
-                    class="h-12 max-w-32 object-contain"
-                    :src="printSettings.logo"
-                  />
-                </div>
-                <div class="text-xl text-gray-700 font-semibold" v-else>
-                  {{ companyName }}
-                </div>
-              </div>
-              <div class="w-1/3">
-                <div>{{ printSettings.email }}</div>
-                <div class="mt-1">{{ printSettings.phone }}</div>
-              </div>
-              <div class="w-1/3">
-                <div v-if="address">{{ address.addressDisplay }}</div>
-              </div>
-            </div>
-          </div>
+    <div class="flex" v-if="doc">
+      <div class="w-1/2 mb-1 mt-2 px-10" v-if="meta">
+        <div
+          class="border rounded-lg shadow h-full flex flex-col justify-between"
+          style="width: 100%; height: 100%"
+        >
           <div class="mt-8 px-6">
-            <h1 class="text-2xl font-semibold">
-              {{
-                doc._notInserted
-                  ? doc.doctype === 'SalesInvoice'
-                    ? _('Nueva Venta')
-                    : _('New Bill')
-                  : doc.name
-              }}
-            </h1>
             <div class="flex justify-between mt-2">
-              <!--<div class="w-1/3">
-                <FormControl
-                  class="text-base"
-                  input-class="bg-gray-100 p-2 text-lg font-semibold"
-                  :df="meta.getField(partyField.fieldname)"
-                  :value="doc[partyField.fieldname]"
-                  :placeholder="partyField.label"
-                  @change="(value) => doc.set(partyField.fieldname, value)"
-                  @new-doc="
-                    (party) => doc.set(partyField.fieldname, party.name)
-                  "
-                  :read-only="doc.submitted"
-                />
-                <FormControl
-                  class="mt-2 text-base"
-                  input-class="bg-gray-100 px-3 py-2 text-base"
-                  :df="meta.getField('account')"
-                  :value="doc.account"
-                  :placeholder="'Account'"
-                  @change="(value) => doc.set('account', value)"
-                  :read-only="doc.submitted"
-                />
-              </div>-->
-              <div class="w-1/3">
+              <div class="w-1/3 text-left">
+                <label style="color: gray; font-family: verdana">
+                  Buscar Producto
+                </label>
+              </div>
+
+              <div class="w-1/3 ext-right">
                 <FormControl
                   input-class="bg-gray-100 px-3 py-2 text-base text-right"
-                  :df="meta.getField('date')"
-                  :value="doc.date"
-                  :placeholder="'Date'"
+                  :df="new Date()"
+                  :value="`${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`"
                   @change="(value) => doc.set('date', value)"
                   :read-only="doc.submitted"
                 />
               </div>
             </div>
-          </div>
-          <div class="mt-8 px-6">
-            buscar producto
-            <br/>
-            <div class="flex justify-between mt-5">
+            <div class="flex justify-between mt-4">
               <div class="w-2/4 px-2">
-                <!--<FormControl
-                  class="mt-2 text-base"
-                  input-class="bg-gray-100 px-10 py-2 text-base"
-                  :df="meta.getField('account')"
-                  :value="doc.account"
-                  :placeholder="'Producto'"
-                  :read-only="doc.submitted"
-                />-->
-                
                 <div class="input-container ic1">
                   <input
-                    class="input1
-                    mt-2
-                    w-full
-                    text-base
-                    bg-gray-100
-                    px-3
-                    py-2
-                    text-base
-                    rounded"
+                    class="
+                      input1
+                      mt-2
+                      w-full
+                      text-base
+                      bg-gray-100
+                      px-3
+                      py-2
+                      text-base
+                      rounded
+                    "
                     placeholder=" "
                     type="text"
                     v-model="producto"
@@ -142,15 +82,17 @@
               <div class="w-1/4 px-2">
                 <div class="input-container ic1">
                   <input
-                    class="input2 
-                    mt-2
-                    w-full
-                    text-base
-                    bg-gray-100
-                    px-3
-                    py-2
-                    text-base
-                    rounded"
+                    class="
+                      input2
+                      mt-2
+                      w-full
+                      text-base
+                      bg-gray-100
+                      px-3
+                      py-2
+                      text-base
+                      rounded
+                    "
                     placeholder=" "
                     type="number"
                     min="0"
@@ -166,15 +108,17 @@
               <div class="w-1/4 px-2">
                 <div class="input-container ic1">
                   <input
-                    class="input3
-                    mt-2
-                    w-full
-                    text-base
-                    bg-gray-100
-                    px-3
-                    py-2
-                    text-base
-                    rounded"
+                    class="
+                      input3
+                      mt-2
+                      w-full
+                      text-base
+                      bg-gray-100
+                      px-3
+                      py-2
+                      text-base
+                      rounded
+                    "
                     placeholder=" "
                     type="number"
                     min="0"
@@ -199,10 +143,25 @@
                   {{ _('Agregar Producto') }}
                 </Button>
               </div>
-              <Tabla></Tabla>
             </div>
-            <div class="mt-8 px-6">
-              Productos a vender
+
+            <div class="mt-2 px-2"></div>
+            <div class="mt-2 px-2">
+              <TableView :head="head" :items="items" :test="'asdfasdf'" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/2 mb-1 mt-2" v-if="meta" >
+        <div
+          class="border rounded-lg shadow h-full flex flex-col justify-between"
+          style="width: 90%; height: 100%"
+        >
+          <div class="mt-8 px-6">
+            <div class="mt-6 px-6">
+              <label style="color: gray; font-family: verdana">
+                Productos a Vender
+              </label>
               <FormControl
                 :df="meta.getField('items')"
                 :value="doc.items"
@@ -213,72 +172,72 @@
               />
             </div>
           </div>
-        </div>
-        <div
-          class="px-6 mb-6 flex justify-between text-base"
-          v-if="doc.items.length"
-        >
-          <div class="flex-1 mr-10">
-            <FormControl
-              v-if="!doc.submitted || doc.terms"
-              :df="meta.getField('terms')"
-              :value="doc.terms"
-              :show-label="true"
-              input-class="bg-gray-100"
-              @change="(value) => doc.set('terms', value)"
-              :read-only="doc.submitted"
-            />
-          </div>
-          <div class="w-64">
-            <div class="flex pl-2 justify-between py-3 border-b">
-              <div>{{ _('Subtotal') }}</div>
-              <div>{{ formattedValue('netTotal') }}</div>
+          <div
+            class="px-6 mb-6 flex justify-between text-base"
+            v-if="doc.items.length"
+          >
+            <div class="flex-1 mr-10">
+              <FormControl
+                v-if="!doc.submitted || doc.terms"
+                :df="meta.getField('terms')"
+                :value="doc.terms"
+                :show-label="true"
+                input-class="bg-gray-100"
+                @change="(value) => doc.set('terms', value)"
+                :read-only="doc.submitted"
+              />
             </div>
-            <div
-              class="flex pl-2 justify-between py-3"
-              v-for="tax in doc.taxes"
-              :key="tax.name"
-            >
-              <div>{{ tax.account }}</div>
-              <div>
-                {{
-                  frappe.format(tax.amount, {
-                    fieldtype: 'Currency',
-                    currency: doc.currency,
-                  })
-                }}
+            <div class="w-64">
+              <div class="flex pl-2 justify-between py-3 border-b">
+                <div>{{ _('Subtotal') }}</div>
+                <div>{{ formattedValue('netTotal') }}</div>
               </div>
-            </div>
-            <div
-              class="
-                flex
-                pl-2
-                justify-between
-                py-3
-                border-t
-                text-green-600
-                font-semibold
-                text-base
-              "
-            >
-              <div>{{ _('Grand Total') }}</div>
-              <div>{{ formattedValue('grandTotal') }}</div>
-            </div>
-            <div
-              v-if="doc.outstandingAmount > 0"
-              class="
-                flex
-                pl-2
-                justify-between
-                py-3
-                border-t
-                text-red-600
-                font-semibold
-                text-base
-              "
-            >
-              <div>{{ _('Outstanding Amount') }}</div>
-              <div>{{ formattedValue('outstandingAmount') }}</div>
+              <div
+                class="flex pl-2 justify-between py-3"
+                v-for="tax in doc.taxes"
+                :key="tax.name"
+              >
+                <div>{{ tax.account }}</div>
+                <div>
+                  {{
+                    frappe.format(tax.amount, {
+                      fieldtype: 'Currency',
+                      currency: doc.currency,
+                    })
+                  }}
+                </div>
+              </div>
+              <div
+                class="
+                  flex
+                  pl-2
+                  justify-between
+                  py-3
+                  border-t
+                  text-green-600
+                  font-semibold
+                  text-base
+                "
+              >
+                <div>{{ _('Grand Total') }}</div>
+                <div>{{ formattedValue('grandTotal') }}</div>
+              </div>
+              <div
+                v-if="doc.outstandingAmount > 0"
+                class="
+                  flex
+                  pl-2
+                  justify-between
+                  py-3
+                  border-t
+                  text-red-600
+                  font-semibold
+                  text-base
+                "
+              >
+                <div>{{ _('Outstanding Amount') }}</div>
+                <div>{{ formattedValue('outstandingAmount') }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -288,7 +247,7 @@
 </template>
 <script>
 import frappe from 'frappejs';
-import Tabla from '../components/Controls/Table.vue';
+import TableView from '../components/Tableview.vue';
 import StatusBadge from '@/components/StatusBadge';
 import PageHeader from '@/components/PageHeader';
 import Button from '@/components/Button';
@@ -308,7 +267,7 @@ export default {
   name: 'InvoiceForm',
   props: ['doctype', 'name'],
   components: {
-    Tabla,
+    TableView,
     PageHeader,
     StatusBadge,
     Button,
@@ -332,7 +291,30 @@ export default {
       desactivateButton: false,
       amount: 1,
       newRate: null,
-      producto: ''
+      producto: '',
+      items: [],
+      head: [
+        {
+          title: 'Nombre',
+          fieldName: 'name',
+        },
+        {
+          title: 'Precio',
+          fieldName: 'rate',
+        },
+        {
+          title: 'Cantidad',
+          fieldName: 'amount',
+        },
+        {
+          title: 'Fecha Vencimiento',
+          fieldName: 'dateExpired',
+        },
+        {
+          title: 'Descripcion',
+          fieldName: 'description',
+        },
+      ],
     };
   },
   computed: {
@@ -390,21 +372,26 @@ export default {
       );
       return this.doc.insertOrUpdate().catch(this.handleError);
     },
-    addItem(){
+    addItem() {
       console.log(this.amount);
       console.log(this.newRate);
     },
-    validateNewRate(){
-      this.newRate = this.newRate >= 0? this.newRate: 1;
+    validateNewRate() {
+      this.newRate = this.newRate >= 0 ? this.newRate : 1;
     },
     activateButton() {
-      this.amount = this.amount >= 0? this.amount: 1;
+      this.amount = this.amount >= 0 ? this.amount : 1;
       this.desactivateButton = this.amount < 1;
-      console.log(this.desactivateButton);
     },
-    buscarProductos(){
-      
-      console.log('------',this.producto)
+    async buscarProductos() {
+      this.items = await frappe.db.sql(
+        `Select * from Item Where ` +
+          `name like '%${this.producto}%' or ` +
+          `barCode like '%${this.producto}%' or ` +
+          `description like '%${this.producto}%' ` +
+          `order by name asc`
+      );
+      console.log('------', this.items);
     },
     onSubmitClick() {
       let message =
@@ -444,7 +431,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .input-container {
   position: relative;
   width: 100%;
@@ -458,7 +444,6 @@ export default {
   position: absolute;
   top: -10px;
 }
-
 
 .input1:not(:placeholder-shown) ~ .placeholder {
   color: #000000;
