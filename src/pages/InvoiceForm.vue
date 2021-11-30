@@ -466,4 +466,4 @@ export default {
 .input3:focus ~ .placeholder {
   color: #d18624;
 }
-</style>
+</style> 
