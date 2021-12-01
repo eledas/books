@@ -120,7 +120,7 @@ export default {
     },
     {
       fieldname: 'terms',
-      label: 'Notes',
+      label: 'Nota',
       fieldtype: 'Text',
     },
     {

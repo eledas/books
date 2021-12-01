@@ -3,7 +3,7 @@
     <PageHeader>
       <BackLink slot="title" />
       <template slot="actions">
-        <StatusBadge :status="status" />
+        <!--<StatusBadge :status="status" />-->
         <Button
           v-if="doc.submitted"
           class="text-gray-900 text-xs ml-2"
@@ -264,7 +264,7 @@
 <script>
 import frappe from 'frappejs';
 import TableView from '../components/Tableview.vue';
-import StatusBadge from '@/components/StatusBadge';
+//import StatusBadge from '@/components/StatusBadge';
 import PageHeader from '@/components/PageHeader';
 import Button from '@/components/Button';
 import FormControl from '@/components/Controls/FormControl';
@@ -285,7 +285,7 @@ export default {
   components: {
     TableView,
     PageHeader,
-    StatusBadge,
+    //StatusBadge,
     Button,
     FormControl,
     DropdownWithActions,
@@ -304,7 +304,7 @@ export default {
       color: null,
       printSettings: null,
       companyName: null,
-      desactivateButton: false,
+      desactivateButton: true,
       amount: 1,
       newRate: null,
       producto: '',
@@ -379,19 +379,25 @@ export default {
   methods: {
     routeTo,
     async onSaveClick() {
+      this.doc.customer = 'cf';
+      console.log(this.doc)
       await this.doc.set(
         'items',
         this.doc.items.filter((row) => row.item)
       );
-      return this.doc.insertOrUpdate().catch(this.handleError);
+      console.log(this.doc)
+      return this.doc.insertOrUpdate().catch(error=>{
+        console.log(error);
+        this.handleError});
     },
     getItemSelected(value) {
       this.itemSelected = value;
       this.amount = 1;
+      this.newRate = null;
+      this.desactivateButton = false;
     },
     async getItem() {
       let item;
-
       try {
         item = await frappe.db.sql(
           `Select * from Item Where ` + `name = '${this.itemSelected}'`
@@ -413,7 +419,7 @@ export default {
         //Producto no encontrado
         handleErrorWithDialog(
           {
-            message: `El producto "${item.name}" no se encontro en la base de datos.`,
+            message: `El producto "${this.producto}" no se encontro en la base de datos.`,
           },
           this.doc
         );
@@ -465,21 +471,28 @@ export default {
       document.account = 'Activos - 1';
       document.item = this.itemSelected;
       document.description = item.description;
-      document.rate = item.rate * this.amount;
+      document.rate = this.newRate != null ? this.newRate : item.rate;
       document.amount = this.amount;
       document.quantity = this.amount;
       document.baseRate = item.costRate;
       this.doc.items.push(document);
     },
+    getTotal() {
+      let total = 0;
+      for (let i = 0; i < this.doc.items.length; i++) {
+        total += this.doc.items[i].rate * this.doc.items[i].quantity;
+      }
+      return total;
+    },
     async addItem() {
-      console.log(this);
-      console.log(this.doc);
       let item = await this.getItem();
       if (this.validateShop(item)) return;
 
       let data = this.createData();
       this.createDocument(data, item);
       this.amount = 1;
+      this.newRate = null;
+      this.doc.grandTotal = this.getTotal();
     },
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;
@@ -498,7 +511,12 @@ export default {
             `order by name asc`
         );
       } catch (error) {
-        this.items = [];
+        handleErrorWithDialog(
+          {
+            message: `Error al buscar el prodcto "${item.name}".`,
+          },
+          this.doc
+        );
       }
     },
     onSubmitClick() {
