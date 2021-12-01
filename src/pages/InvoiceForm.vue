@@ -147,7 +147,11 @@
 
             <div class="mt-2 px-2"></div>
             <div class="mt-2 px-2">
-              <TableView :head="head" :items="items" @getItemSelected="getItemSelected" />
+              <TableView
+                :head="head"
+                :items="items"
+                @getItemSelected="getItemSelected"
+              />
             </div>
           </div>
         </div>
@@ -387,36 +391,70 @@ export default {
       );
       return this.doc.insertOrUpdate().catch(this.handleError);
     },
-    getItemSelected(value){
+    getItemSelected(value) {
       this.itemSelected = value;
     },
-    async addItem() {      
-      let data = {}
-      let key= 'items'
-      let newItem = await frappe.db.sql(
-        `Select * from Item Where ` +
-          `name = '${this.itemSelected}'` 
-      );
+    async getItem() {
+      let item;
 
-      data.doctype = this.meta.getField(key).childtype;
-      data.parent = this.name;
-      data.parenttype = this.doctype;
-      data.parentfield = key;
-      data.parentdoc = this;
-
-      if (!data.idx) {
-        data.idx = 0
+      try {
+        item = await frappe.db.sql(
+          `Select * from Item Where ` + `name = '${this.itemSelected}'`
+        );
+        return item[0];
+      } catch (error) {
+        return undefined;
       }
+    },
+    validateShop(item) {
+      if (item == undefined) {
+        //producto no encontrado
+        return true;
+      }
+
+      if (item.amount < this.amount) {
+        //no se cuenta con la cantidad necesaria
+        return true;
+      }
+
+      return false;
+    },
+    createData() {
+      let data = {};
+      data.doctype = this.doctype + 'Item';
+      data.parent = this.doc.name;
+      data.parenttype = this.doc.doctype;
+      data.parentfield = 'items';
+      data.parentdoc = this.doc;
+      (this.doc['items'] || []).length;
 
       if (!data.name) {
         data.name = frappe.getRandomString();
       }
 
-      console.log(11111,data);
-      console.log(newItem[0]);
-      console.log(this.doc.items[0])
-      console.log(new frappe.BaseDocument(date))
-      this.doc.push(newItem[0]);
+      if (!data.idx) {
+        data.idx = (this.doc['items'] || []).length;
+      }
+      return data;
+    },
+    createDocument(data, item) {
+      let document = new frappe.BaseDocument(data);
+      document.account = 'Activos - 1';
+      document.item = this.itemSelected;
+      document.description = item.description;
+      document.rate = item.rate * this.amount;
+      document.amount = this.amount;
+      document.quantity = this.amount;
+      document.baseRate = item.costRate;
+      this.doc.items.push(document);
+      console.log(this.doc.items);
+    },
+    async addItem() {
+      let item = await this.getItem();
+      if (this.validateShop(item)) return;
+
+      let data = this.createData();
+      this.createDocument(data, item);
     },
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;
@@ -426,13 +464,17 @@ export default {
       this.desactivateButton = this.amount < 1;
     },
     async buscarProductos() {
-      this.items = await frappe.db.sql(
-        `Select * from Item Where ` +
-          `name like '%${this.producto}%' or ` +
-          `barCode like '%${this.producto}%' or ` +
-          `description like '%${this.producto}%' ` +
-          `order by name asc`
-      );
+      try {
+        this.items = await frappe.db.sql(
+          `Select * from Item Where ` +
+            `name like '%${this.producto}%' or ` +
+            `barCode like '%${this.producto}%' or ` +
+            `description like '%${this.producto}%' ` +
+            `order by name asc`
+        );
+      } catch (error) {
+        this.items = [];
+      }
     },
     onSubmitClick() {
       let message =

@@ -31,7 +31,7 @@ export default class GSTR3B extends BaseDocument {
     const salesInvoices = frappe.db.getAll({
       doctype: 'SalesInvoice',
       filters,
-      fields: ['*']
+      fields: ['*'] 
     });
     const purchaseInvoices = frappe.db.getAll({
       doctype: 'PurchaseInvoice',

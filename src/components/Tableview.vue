@@ -50,7 +50,7 @@
               v-for="(field, indexKey) in head"
               :key="item.name + indexKey"
             >
-              {{ item[field.fieldName] }}
+              {{ field.fieldName==='rate'?`Q ${parseFloat(item[field.fieldName]).toFixed(2)}`:item[field.fieldName] }}
             </td>
           </tr>
         </tbody>
