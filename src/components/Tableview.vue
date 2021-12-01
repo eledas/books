@@ -2,17 +2,35 @@
   <div class="py-3">
     <div class="text-center px-50">
       <label
-        class="bg-gray-100 rounded px-4"
+        v-if="itemSelected != ''"
+        class="bg-green-100 rounded px-4"
         style="color: gray; font-family: verdana"
       >
-        {{ items[index]['name'] }}
+        {{ itemSelected }}
+      </label>
+      <label
+        v-else-if="itemSelected == ''"
+        class="bg-orange-100 rounded px-4"
+        style="color: gray; font-family: verdana"
+      >
+        Seleecione un Porducto
       </label>
     </div>
-    <div class="tableFixHead py-3">
+
+    <div class="text-center py-2 px-50">
+      <label
+        v-if="items.length < 1"
+        class="bg-red-100 rounded px-4"
+        style="color: gray; font-family: verdana"
+      >
+        No se encontraron productos
+      </label>
+    </div>
+    <div class="tableFixHead py-2">
       <table class="table table-xs table-hover">
-        <thead class="" v-b-scrollspy:nav-scroller>
+        <thead class="">
           <tr>
-            <th v-for="(item, index) in head" :key="index">
+            <th v-for="(item, indexKey) in head" :key="indexKey">
               <label style="color: gray; font-family: verdana">
                 {{ item.title }}
               </label>
@@ -21,16 +39,16 @@
         </thead>
         <tbody>
           <tr
-            @click="selectItem(index)"
-            :class="index % 2 != 0 ? 'bg-gray-100 ' : ''"
-            v-for="(item, index) in items"
-            :v-if="index < 5"
+            @click="selectItem(item.name)"
+            :class="indexKey % 2 != 0 ? 'bg-gray-100 ' : ''"
+            v-for="(item, indexKey) in items"
+            :v-if="indexKey < 5"
             :key="item.name"
           >
             <td
               scope="col"
-              v-for="(field, index) in head"
-              :key="item.name + index"
+              v-for="(field, indexKey) in head"
+              :key="item.name + indexKey"
             >
               {{ item[field.fieldName] }}
             </td>
@@ -48,33 +66,25 @@ export default {
     head: {
       type: Array,
       default() {
-        return []
+        return [];
       },
     },
     items: {
       type: Array,
       default() {
-        return []
-      },
-    },
-    test: {
-      type: String,
-      default() {
-        return ''
+        return [];
       },
     },
   },
   data() {
     return {
-      index: 0,
-      head2: [],
+      itemSelected: '',
     };
   },
   methods: {
     selectItem(value) {
-      this.head2 = this.head;
-      console.log(12312, value);
-      this.index = value;
+      this.$emit('getItemSelected', value);
+      this.itemSelected = value;
     },
   },
 };

@@ -36,7 +36,7 @@
           class="border rounded-lg shadow h-full flex flex-col justify-between"
           style="width: 100%; height: 100%"
         >
-          <div class="mt-8 px-6">
+          <div class="mt-6 px-6">
             <div class="flex justify-between mt-2">
               <div class="w-1/3 text-left">
                 <label style="color: gray; font-family: verdana">
@@ -147,21 +147,35 @@
 
             <div class="mt-2 px-2"></div>
             <div class="mt-2 px-2">
-              <TableView :head="head" :items="items" :test="'asdfasdf'" />
+              <TableView :head="head" :items="items" @getItemSelected="getItemSelected" />
             </div>
           </div>
         </div>
       </div>
-      <div class="w-1/2 mb-1 mt-2" v-if="meta" >
+      <div class="w-1/2 mb-1 mt-2" v-if="meta">
         <div
           class="border rounded-lg shadow h-full flex flex-col justify-between"
           style="width: 90%; height: 100%"
         >
-          <div class="mt-8 px-6">
+          <div class="mt-6 px-6">
+            <div class="flex justify-between mt-2">
+              <div class="w-1/3 text-left">
+                <label style="color: gray; font-family: verdana">
+                  Productoa a Vender
+                </label>
+              </div>
+
+              <div class="w-1/3 ext-right">
+                <FormControl
+                  input-class="bg-gray-100 px-3 py-2 text-base text-right"
+                  :df="new Date()"
+                  :value="`${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`"
+                  @change="(value) => doc.set('date', value)"
+                  :read-only="doc.submitted"
+                />
+              </div>
+            </div>
             <div class="mt-6 px-6">
-              <label style="color: gray; font-family: verdana">
-                Productos a Vender
-              </label>
               <FormControl
                 :df="meta.getField('items')"
                 :value="doc.items"
@@ -293,6 +307,7 @@ export default {
       newRate: null,
       producto: '',
       items: [],
+      itemSelected: '',
       head: [
         {
           title: 'Nombre',
@@ -372,9 +387,36 @@ export default {
       );
       return this.doc.insertOrUpdate().catch(this.handleError);
     },
-    addItem() {
-      console.log(this.amount);
-      console.log(this.newRate);
+    getItemSelected(value){
+      this.itemSelected = value;
+    },
+    async addItem() {      
+      let data = {}
+      let key= 'items'
+      let newItem = await frappe.db.sql(
+        `Select * from Item Where ` +
+          `name = '${this.itemSelected}'` 
+      );
+
+      data.doctype = this.meta.getField(key).childtype;
+      data.parent = this.name;
+      data.parenttype = this.doctype;
+      data.parentfield = key;
+      data.parentdoc = this;
+
+      if (!data.idx) {
+        data.idx = 0
+      }
+
+      if (!data.name) {
+        data.name = frappe.getRandomString();
+      }
+
+      console.log(11111,data);
+      console.log(newItem[0]);
+      console.log(this.doc.items[0])
+      console.log(new frappe.BaseDocument(date))
+      this.doc.push(newItem[0]);
     },
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;
@@ -391,7 +433,6 @@ export default {
           `description like '%${this.producto}%' ` +
           `order by name asc`
       );
-      console.log('------', this.items);
     },
     onSubmitClick() {
       let message =
@@ -427,6 +468,9 @@ export default {
       let df = doc.meta.getField(fieldname);
       return frappe.format(doc[fieldname], df, doc);
     },
+  },
+  beforeMount() {
+    this.buscarProductos();
   },
 };
 </script>

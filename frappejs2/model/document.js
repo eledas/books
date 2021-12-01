@@ -184,6 +184,9 @@ module.exports = class BaseDocument extends Observable {
         data.name = frappe.getRandomString();
       }
 
+      console.log(new BaseDocument(data));
+      console.log(data);
+
       return new BaseDocument(data);
     }
   }

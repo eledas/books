@@ -1,0 +1,2258 @@
+[33mcommit 7df7d25a8138b9a964651b54629c260c14befc32[m[33m ([m[1;36mHEAD -> [m[1;32mventas[m[33m, [m[1;31morigin/ventas[m[33m)[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 30 11:22:01 2021 -0600
+
+    test
+
+[33mcommit 4c769ce96b6a31f033682d5e99745194a600cbf0[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 30 11:03:27 2021 -0600
+
+    Se lleva un 80% de la interfaz de ventas
+
+[33mcommit 0a174b1e4c9d5bc097721df225d664a4a5bc7978[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Mon Nov 29 11:43:16 2021 -0600
+
+    Se tiene interfaz de inputs para ventas
+
+[33mcommit ad27514c82ba19f7e45f15a32b639ecd9e3f641c[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Sun Nov 28 11:54:03 2021 -0600
+
+    Se ordeno por nombre de forma ascendente el inventario
+
+[33mcommit b646a196c884b9d71d092743ad1af10021c393f1[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Sun Nov 28 11:32:52 2021 -0600
+
+    Se elimino un boton inutil
+
+[33mcommit 3fcec899309f7691d456613810f12f2fd9039476[m[33m ([m[1;31morigin/vistaInventario[m[33m)[m
+Merge: b23ff7f af16221
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Sat Nov 27 20:45:25 2021 -0600
+
+    Merge branch 'master' into vistaInventario
+
+[33mcommit b23ff7f79bd1debade6ded46513407bce2c7b877[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Sat Nov 27 20:44:23 2021 -0600
+
+    Se finalizo el inventario
+
+[33mcommit da7159e57b26337b61d7326316a7bfb3dfc066cd[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Sat Nov 27 01:01:36 2021 -0600
+
+    Se corrigio la fecha
+
+[33mcommit 6bf10c634649f7f4567313f841e63acda6d83f7d[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Fri Nov 26 08:43:00 2021 -0600
+
+    Se corrigieron errores
+
+[33mcommit 5181fca1a20ba90a11febdecda8c1c89a81a8870[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Wed Nov 24 10:52:53 2021 -0600
+
+    Se adapto proveedores
+
+[33mcommit a1bbe2d8b17f5e78771cedf8489bb0b595cd57cb[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Wed Nov 24 10:29:47 2021 -0600
+
+    Se corrigio la tabla
+
+[33mcommit 38ee044d3bff233c2a60d500d5c95f974e388c7f[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Wed Nov 24 10:08:15 2021 -0600
+
+    Se agrego el boton para guardar cambios
+
+[33mcommit 96c525a01d897bb5d605cae53bfe9b7e10f26a76[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 23 23:03:18 2021 -0600
+
+    Se tradujo al espanol el modulo de proveedores
+
+[33mcommit 929c4d84603b371e8e6a09753480e887b4ad4167[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 23 16:47:14 2021 -0600
+
+    Se agregaron los campos a la interfaz
+
+[33mcommit f32f6252d9b17d40c1fc43167988803c419bebab[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 23 16:22:03 2021 -0600
+
+    Se agregaron los campos necesarios al formulario
+
+[33mcommit af162213993c49633cf422bfaa004fdab213141c[m
+Author: Edgar Aldana <arnoldo201@hotmail.com>
+Date:   Tue Nov 23 13:23:32 2021 -0600
+
+    Se agregaron modificaciones
+
+[33mcommit 542626108a193f58986458966a9812c67d8c46a7[m
+Author: Leonel Aguilar <leoaguilarsanchez97@gmail.com>
+Date:   Tue Nov 23 13:00:27 2021 -0600
+
+    modificado package.json
+
+[33mcommit d54dd4f2d75c8e815b72f1d1edd48a3c4f9722d6[m
+Author: Leonel Aguilar <leoaguilarsanchez97@gmail.com>
+Date:   Tue Nov 23 13:00:13 2021 -0600
+
+    Modificado package.json
+
+[33mcommit 95735a91e86cc0415a73b10938bf0c9113fcb839[m
+Merge: ceec97a abd0224
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Tue Nov 23 18:37:20 2021 +0530
+
+    Merge pull request #253 from ankitsinghaniyaz/fix-linux-build
+    
+    fix linux icons not showing and add deb and rpm package
+
+[33mcommit abd0224bdf1d0e24de195a1184ba926b59f391d4[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Tue Nov 23 18:34:50 2021 +0530
+
+    fix linux icons not showing and add deb and rpm package
+
+[33mcommit ceec97ab3af68c32709820e74bedb7339a035444[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 23 12:56:46 2021 +0530
+
+    fix: update all icons, fix notarize import, update README.md
+
+[33mcommit 7cb7f0390f522f948a8d23e7caec970df12c1faa[m
+Author: Leo <leoaguilarsanchez97@gmail.com>
+Date:   Mon Nov 22 23:44:19 2021 -0600
+
+    Agregado build icon
+
+[33mcommit b9819dfcf7fc33882239ada89af8f85a118922e2[m
+Author: Leonel Aguilar <leoaguilarsanchez97@gmail.com>
+Date:   Mon Nov 22 23:29:49 2021 -0600
+
+    Agregada primera version
+
+[33mcommit 50371b1a56fa62b36c81c16dc419eae015eeefb7[m
+Merge: ad39d53 b5cb406
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Tue Nov 23 10:35:01 2021 +0530
+
+    Merge pull request #251 from piyushsinghania/fix/error-message-while-navigating
+    
+    Prevented error message on navigation
+
+[33mcommit b5cb406c0c57b670e6ed57a7c7d1af8d44cb9aac[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Mon Nov 22 19:44:52 2021 +0530
+
+    Prevented RangeError: maximum call stack size exceeded
+
+[33mcommit ad39d53d3b28f5dac6f0a642d5ca18807ec1c1b6[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 16:45:35 2021 +0530
+
+    build: remove arch arm cause can't compile for that without arm
+
+[33mcommit d6dabc07727c716c9098b755b659da697a75699f[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 16:40:04 2021 +0530
+
+    fix: typo
+
+[33mcommit 39d0fd1d3ad47c2c079e47a49a0fd04ab214f675[m
+Merge: 4340113 9285ac6
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 16:21:23 2021 +0530
+
+    Merge pull request #252 from 18alantom/prep-release
+    
+    build: update configs
+
+[33mcommit 9285ac6d5e7d66c45a41993cbc6412780d78aa37[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 16:17:41 2021 +0530
+
+    build: bump version, add support for portable build, nsis ask install location
+    - update package.json fields
+    - add specific icons for windows
+    - add icns for mac
+    - fix plist file formatting
+
+[33mcommit 4340113ac915372ee040e3ae4dcf6993839b0c9c[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 12:04:29 2021 +0530
+
+    fix(ux): disallow negative amount in Payments
+
+[33mcommit 4a53e0c34431b9212a03135981a310b6d73debe6[m
+Merge: d8ae1f3 4aeffab
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 11:27:47 2021 +0530
+
+    Merge pull request #250 from 18alantom/temp
+    
+    fix: Minor UI UX fixes
+
+[33mcommit 4aeffabfa8826d963e25e6a405d0208907385518[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 11:25:09 2021 +0530
+
+    fix(ux): show outstanding amount if non zero
+    fix: don't allow submit for cancelled Payments
+    fix(ui): JE credit/debit colors
+
+[33mcommit d8ae1f37d81ded371de9035ea9305b6fa97441b5[m
+Merge: aa6a565 1ffd043
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Mon Nov 22 11:24:32 2021 +0530
+
+    Merge pull request #249 from piyushsinghania/enhancement/cancel-paid-invoices
+    
+    Add ability to cancel invoice
+
+[33mcommit f8ff30156b4978fea7bca76e5c3e1308cc33ce9a[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Sun Nov 21 21:45:27 2021 +0530
+
+    Prevented error message on navigation
+
+[33mcommit 1ffd043ca96047d0bd99970516443f68b6b58c43[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Sun Nov 21 19:08:04 2021 +0530
+
+    Add ability to cancel invoice
+
+[33mcommit aa6a565f9b227cfe9488c0e6e71cc3346f2ef260[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 16 13:15:20 2021 +0530
+
+    chore: move prettier config to package.json, fix icon spacing
+
+[33mcommit ec862509e573ae887a51d53e8c9b367ac8b6673c[m
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Sun Nov 14 17:45:12 2021 +0530
+
+    fix header
+
+[33mcommit 3f11aa4dcbcb7bc3ad5bd1581238f8e98b2ebf37[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Sun Nov 14 17:43:40 2021 +0530
+
+    final logo update
+
+[33mcommit b146c68d1793e31b7d3660f6215ac9a847951335[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Sun Nov 14 17:06:04 2021 +0530
+
+    fix logo spacing
+
+[33mcommit b9576a13ba8e7e65ab2adde52d91ae2623c42d9c[m
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Sun Nov 14 16:24:07 2021 +0530
+
+    fix header
+
+[33mcommit 41657f4d3b4a22a4834fcb8ec2d2fc35270356aa[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Sun Nov 14 16:21:34 2021 +0530
+
+    fix README header, add tentative (better) icon
+
+[33mcommit 11fd2bc95608543a607a1cac7cca8ce8ada5d6a1[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Fri Nov 12 00:31:30 2021 +0530
+
+    fix: ES6 dynamic import on importing fixture JSONs
+
+[33mcommit 459d334e08792521bfbed4a0b3482ba4612b6ffe[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Fri Nov 12 00:23:10 2021 +0530
+
+    fix: dynamic ES6 import
+    - db selector hangup on file deletion
+
+[33mcommit 22dcaba66b22447d48b2b27fe9e7fa21818994e2[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 19:24:17 2021 +0530
+
+    fix: remove noop class from template
+
+[33mcommit f25ccd8aa86bafe6b946fda4dd5243b8e75fa6f7[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 15:05:34 2021 +0530
+
+    fix(ui): show draft status for JE and non-submitables, set Cash as default
+
+[33mcommit de25de1fd4c3ecfc3975602e4f1098c4705babed[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 13:41:33 2021 +0530
+
+    fix(ui): show status badge on an open invoice
+
+[33mcommit 58259a2437ac07c99bdef94bbfdf76d9d6646e2a[m
+Merge: d4b5627 be4cb34
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 12:24:35 2021 +0530
+
+    Merge pull request #246 from 18alantom/fix-icon-display-dock-messages
+    
+    fix(ui): display correct icon in the dock and messagebox in dev mode
+
+[33mcommit be4cb343987677728e709c78f94f2eb73f6a9af4[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 12:23:26 2021 +0530
+
+    fix(ui): display correct icon in the dock and messagebox in dev mode
+
+[33mcommit d4b5627793cc5e69811108f2748f888c80427a37[m
+Merge: e281b66 40f6e9d
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 11:22:49 2021 +0530
+
+    Merge pull request #245 from 18alantom/fix-tax-display
+    
+    fix(ux): remove tax rate from invoice breakdown
+
+[33mcommit 40f6e9db05e0618157a61d2f697a4fbb677de0c4[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 11 11:18:22 2021 +0530
+
+    fix(ux): remove tax rate from invoice breakdown
+
+[33mcommit e281b667b2c50051a641e41105416eee43092b1e[m
+Merge: 9339efe d0c6c27
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 21:46:57 2021 +0530
+
+    Merge pull request #240 from madisvain/patch-1
+    
+    Change VATComply API for exchange rates
+
+[33mcommit 9339efe9515c49ba6f8b9b73e6c32d263248caa9[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 19:20:20 2021 +0530
+
+    fix: remove console.logs 🤦
+
+[33mcommit 735bf3f8306bedcbfb6c3bb0e88ee6b3bfd70b5d[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 19:09:21 2021 +0530
+
+    fix: prevent NaN in the invoices
+
+[33mcommit 04d2c4278ff22717c91d0791df2c42f800e90e4e[m
+Merge: 0cabca4 a9c54b8
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 17:02:27 2021 +0530
+
+    Merge pull request #243 from 18alantom/fix-customer-def-acc
+    
+    fix: set party default account only if it exists
+
+[33mcommit a9c54b814e86902f77db1980d1c102c6aee2bdfe[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 17:00:47 2021 +0530
+
+    fix: set party default account only if it exists
+    - refactor conditionals
+    - formatting
+
+[33mcommit 0cabca42058961754065966cfdb0d1b5228cfd6d[m
+Merge: d995639 fbd2d75
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 16:46:38 2021 +0530
+
+    Merge pull request #242 from 18alantom/fix-remove-description
+    
+    fix: remove description from the general ledger
+
+[33mcommit fbd2d75cd71756e434ec5544e2dadab00dee1077[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 16:43:11 2021 +0530
+
+    fix: remove description from the general ledger
+
+[33mcommit d99563977d7a83b62ad81bdaed6453d008ac8742[m
+Merge: 3afdb72 57a020f
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 16:12:51 2021 +0530
+
+    Merge pull request #241 from 18alantom/fix-coa-issues
+    
+    fix: bank account parent not being set on setup
+
+[33mcommit 57a020f15e3316592952062cf158f57846546e1e[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 16:12:07 2021 +0530
+
+    fix: autoset accounts only if present; display accounts in quick entry
+
+[33mcommit 99e686a96b1f701f44e86903d658891a664830d7[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Wed Nov 10 14:29:25 2021 +0530
+
+    fix: bank account parent not being set on setup
+
+[33mcommit d0c6c27cf60b19e4331b65ea48a1e72ec774a036[m
+Author: Madis Väin <madisvain@gmail.com>
+Date:   Tue Nov 9 18:47:55 2021 +0200
+
+    Change VATComply API for exchange rates
+    
+    Change the exchangeratesapi.io to https://api.vatcomply.com rates API.
+    
+    I'm the original author of Exchangerates API which now has a paywall and was acquired some years ago.
+    
+    VATComply API will not be sold and provides the same API for exchange rates for free without requiring a API key.
+
+[33mcommit 3afdb72ed36cca69b18ea9ccadb7e3353e0b665e[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 9 16:44:05 2021 +0530
+
+    fix: ask user to add .db extension
+
+[33mcommit 65570d4210aafc37841bd540b85e88cf59d126dd[m
+Merge: 511d044 c20cc5a
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Tue Nov 9 16:21:38 2021 +0530
+
+    Merge pull request #239 from 18alantom/fix-db-creation
+    
+    fix: db creation flow, don't show annoying messages when not required
+
+[33mcommit c20cc5a5dbaa16e9055f02a4d5860c47403087f4[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 9 16:08:25 2021 +0530
+
+    fix: db creation flow, don't show annoying messages when not required
+    - minor refactors and formatting
+
+[33mcommit 511d044715f45fb04844f28aef2e53df62e124e7[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 19:53:39 2021 +0530
+
+    fix: remove spurious commits
+
+[33mcommit ab978122395bda524a948241a6f1620767636c2e[m
+Merge: 49cf248 f905fab
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 19:49:04 2021 +0530
+
+    Merge pull request #236 from 18alantom/minor-fixes-payments
+    
+    fix: minor changes and fixes to Payments
+
+[33mcommit f905fab2568f779551d40cd79299d175860084d0[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 19:37:06 2021 +0530
+
+    fix: prevent "Saving..." due to slipping error (needs frappejs #152)
+
+[33mcommit 96d7a9819c37a3d8aafb6ef12f86ca38de36808e[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 17:36:09 2021 +0530
+
+    feat: add reversion and ledger link to payment quick entry
+
+[33mcommit 08ae048db08c215a06501e410358bae522317cdf[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 17:05:30 2021 +0530
+
+    fix: prevent editing of submitted submitable doctypes from quickform view
+
+[33mcommit 8f64d950558edf2968e556e3f78f1c75ea78f145[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Mon Nov 8 15:15:27 2021 +0530
+
+    refactor: rename "Payment For" to "References"
+    - formatting
+    - change default values to function defaults
+    - add migration script for the Payment table
+
+[33mcommit 49cf24824797711f48605f891511632ab042b11a[m
+Merge: c6c89c2 5cf725d
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Sat Nov 6 01:18:21 2021 +0530
+
+    Merge pull request #237 from 18alantom/fix-db-load
+    
+    fix: issues with db loading
+
+[33mcommit 5cf725d0b7b86a1de57aa4102bb683decaab4181[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Sat Nov 6 01:11:39 2021 +0530
+
+    fix: issues with db loading
+
+[33mcommit 09d4b305eb9cc51481ad2f81aca585d6f5fc4252[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Fri Nov 5 20:00:28 2021 +0530
+
+    fix: make Payment For not required, fix amount bug, ref mandatory only if not cash
+
+[33mcommit c6c89c2e9f3393e22e87af50de957e60c835f383[m
+Merge: b77f553 1a8a23d
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Fri Nov 5 14:47:22 2021 +0530
+
+    Merge pull request #232 from 18alantom/bump-versions
+    
+    build(deps): bump versions of all except vue
+
+[33mcommit 1a8a23d2a2f611169dc15ffc1c8962432890a650[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 4 16:01:26 2021 +0530
+
+    build(electron): bump electron to 15.3.0
+    - refactor Common Js imports to ES6
+
+[33mcommit b77f5536ec1eecd6a87d8cfc7b69dc11c6aa9008[m
+Merge: 99b24d4 0461976
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Fri Nov 5 12:02:52 2021 +0530
+
+    Merge pull request #234 from ankitsinghaniyaz/master
+    
+    Fix profit and loss graph not reflecting changes correctly
+
+[33mcommit 0461976a5bb41ae5fee584a729d0974853d63d6b[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Fri Nov 5 12:00:42 2021 +0530
+
+    fix: don't hide period selectors when no data
+
+[33mcommit f0424d0ee4f0f26e9d46637d2fe112e2257e3149[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Nov 4 15:03:51 2021 +0530
+
+    refactor: deprecate use of remote; remove bg transparency on macOS
+
+[33mcommit 0c34a122d6538b64f75798ed1027e5ebaf287de2[m
+Merge: ae39796 be3574e
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Nov 3 12:28:50 2021 +0530
+
+    Merge pull request #23 from piyushsinghania/fix/auto-reload-of-Profit-And-Loss-Graph
+    
+    Fixed profit and loss graph to auto update
+
+[33mcommit 864d07fd1b5da52b7977e7256270787cb49fa1ec[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 2 19:04:14 2021 +0530
+
+    chore: bump linters and parsers and electron's friends
+    - prettier and eslint have to be configured
+    - few rules have been switched off
+    - deps bumped in this did not require major changes
+
+[33mcommit be3574edc5813db62ace83745f13e8edd8954315[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Tue Nov 2 19:05:43 2021 +0530
+
+    Fixed profit and loss graph auto updation
+
+[33mcommit 192fd9de75f6238eb550d057e02aa5a7eeb14bec[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 2 18:11:08 2021 +0530
+
+    chore: bump dep versions (no refactors)
+
+[33mcommit 27b8dfceabed75316fe5b67ea66d94931faf3ff1[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Nov 2 18:00:45 2021 +0530
+
+    chore: bump tailwind to 2, postcss 7 compat mode
+
+[33mcommit 99b24d472e1da336dc18c2831fcc8568f5e4dd0f[m
+Merge: 2e6733f ae39796
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Tue Nov 2 11:53:40 2021 +0530
+
+    Merge pull request #230 from ankitsinghaniyaz/master
+    
+    Add validation when paying excess amount
+
+[33mcommit ae397965797ca1b8dcba9a8aa6cb5a740cacf424[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Mon Nov 1 23:55:59 2021 +0530
+
+    fix typo, remove extra (
+
+[33mcommit 95e15106828a1af9ab284fb0317d5cb8cbf33407[m
+Merge: 49fc8d5 59c57c2
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Mon Nov 1 23:10:21 2021 +0530
+
+    Merge pull request #22 from piyushsinghania/fix/error-message-not-displayed-while-paying-excess-amount
+    
+    Added translation support and currency symbol in the error message
+
+[33mcommit 59c57c289b6297754e13dbe06f8abfb43bee2017[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Mon Nov 1 23:09:31 2021 +0530
+
+    improve message when trying to pay 0
+
+[33mcommit 093a29785687d444ce65fb47f62b7cc5ccc20ca7[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Mon Nov 1 23:08:08 2021 +0530
+
+    simplify the condition to check if value is larger then max amount
+
+[33mcommit 4fcb54ff7c1da402f493142d198f201634174898[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Mon Nov 1 19:36:02 2021 +0530
+
+    Added translation support and currency symbol in the error message
+
+[33mcommit 49fc8d55868f24d64448f7fa623dbd16ee40da50[m
+Merge: ca0c296 6178cf5
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Sat Oct 30 20:03:27 2021 +0530
+
+    Merge pull request #19 from piyushsinghania/fix/error-message-not-displayed-while-paying-excess-amount
+    
+    Added validation to give error message when trying to pay excess amount for an invoice
+
+[33mcommit 6178cf55c0d3a6819f4c43f519de8b5bcdaeb571[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Fri Oct 29 23:12:10 2021 +0530
+
+    Updated suggested changes
+
+[33mcommit 102ef29d6ba62a36cd9d8d83390312ec5360b13d[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Fri Oct 29 18:26:45 2021 +0530
+
+    Added validation to give error message when trying to pay excess amount for an invoice
+
+[33mcommit 2e6733f58bd4b15c0d936286f0e43bcc6e8f530d[m
+Merge: 2b045d7 ca0c296
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Oct 28 21:45:41 2021 +0530
+
+    Merge pull request #229 from ankitsinghaniyaz/master
+    
+    Fix font issue in invoice
+
+[33mcommit ca0c2968e0d5c3986dafa16484855d7b6eb6dc3e[m
+Merge: e8a2730 a76f928
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 28 21:25:47 2021 +0530
+
+    Merge pull request #13 from piyushsinghania/fix/wrong-font-in-saved-pdf
+    
+    Fixed the font issue while saving pdf
+
+[33mcommit 2b045d72fbd207c2ef33244f939056d94d289cf3[m
+Merge: eb0d1a7 e8a2730
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Oct 28 21:19:44 2021 +0530
+
+    Merge pull request #228 from ankitsinghaniyaz/master
+    
+    Add empty data state for list view
+
+[33mcommit e8a2730d4da12dd4ae2e596b79772b42ad700b6b[m
+Merge: ec096b5 2f823f9
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 28 15:47:04 2021 +0530
+
+    Merge pull request #17 from piyushsinghania/enhancement/added-empty-states-for-empty-lists
+    
+    Added empty states for empty lists
+
+[33mcommit 2f823f9c0a9af8a4332d46024a62e803152e1478[m
+Merge: cbeecb3 7c1160c
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 28 15:24:19 2021 +0530
+
+    Merge branch 'enhancement/added-empty-states-for-empty-lists' of github.com:piyushsinghania/books into enhancement/added-empty-states-for-empty-lists
+
+[33mcommit eb0d1a770bb79f72f5747eed4542125914c4cef1[m
+Merge: c8732d6 ec096b5
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Oct 28 15:22:08 2021 +0530
+
+    Merge pull request #222 from ankitsinghaniyaz/master
+    
+    Resolve ledger related issues
+
+[33mcommit cbeecb39d5ed6cf83d7802a522e0e6612c8ea4f6[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 28 15:16:05 2021 +0530
+
+    Changed generic records word in "No records found" to dynamic name
+
+[33mcommit 7c1160c5b9c9de410219d5a833f31faf3b4961c3[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 28 15:16:05 2021 +0530
+
+    Changed generic records work to dynamic name
+
+[33mcommit ec096b5bbceaad82ae72b6e03887ab16761ab36c[m
+Merge: e214cb8 7aceb64
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 28 15:15:29 2021 +0530
+
+    Merge pull request #18 from piyushsinghania/enhancement/added-filter-reverted-entry
+    
+    Ui updates and some naming changes
+
+[33mcommit 7aceb6477640fedc60996a481dc0f81be47c55ec[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 28 14:51:39 2021 +0530
+
+    Ui updates and some naming changes
+
+[33mcommit e214cb8aa07ee032c96fdac89f1d7ad9c566bc03[m
+Merge: 17bf07a 9d64907
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 28 09:21:38 2021 +0530
+
+    Merge pull request #14 from piyushsinghania/enhancement/added-filter-reverted-entry
+    
+    update -> used app conventions for better readability
+
+[33mcommit 9d64907ada750812a4bac4d2cd97e14e7877b7bd[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Wed Oct 27 21:32:40 2021 +0530
+
+    used app coding conventions
+
+[33mcommit d185345bd109e72d68b4d543430bdbc6638a7be9[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Wed Oct 27 09:21:03 2021 +0530
+
+    Added empty states for empty lists
+
+[33mcommit bfa1aa4b9943dd53cf1650278739aede635f52fb[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Tue Oct 26 01:20:35 2021 +0530
+
+    update -> used app conventions for better readability
+
+[33mcommit a76f9281edd76e8cfd3f3cb10d7ac5e864ab8e1f[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Tue Oct 26 00:07:31 2021 +0530
+
+    refactor make pdf method
+
+[33mcommit 91b3d969c2f9a0515d0ba39a428b6d14cda4a3af[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Mon Oct 25 21:46:12 2021 +0530
+
+    Fixed the font issue while saving pdf
+    Added font support for Basic Template
+    Added feature to select between platform safe fonts
+
+[33mcommit 17bf07a3ae1b44c8a33b62f3a4a28a40ee3399c5[m
+Merge: a242979 4996aed
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 21 23:22:09 2021 +0530
+
+    Merge pull request #12 from piyushsinghania/fix/partial-payment-ledger-entry-issue
+    
+    Fixed the general ledger entry issue while doing partial payments
+
+[33mcommit 4996aed1defed9a4e5b7eb97bbcc695ee20737ed[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 21 23:19:32 2021 +0530
+
+    Fixed the general ledger entry issue while doing partial payments
+
+[33mcommit a2429791087eca71d3469ee49abd5f1e15e05814[m
+Merge: c8732d6 e9b3d2c
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Oct 21 23:13:18 2021 +0530
+
+    Merge pull request #11 from piyushsinghania/enhancement/added-filter-reverted-entry
+    
+    Added enhancement to filter out reverted invoices
+
+[33mcommit e9b3d2ca03882fd1295f5eeb9db4f25ad01587f9[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 21 23:10:14 2021 +0530
+
+    Added enhancement to filter out reverted invoices
+
+[33mcommit c8732d6d8d566956bdf8698c0633f3a2b90e5d7b[m
+Merge: 3ec4e0a 7ad7bf7
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Tue Oct 19 14:47:37 2021 +0530
+
+    Merge pull request #220 from 18alantom/fix-reported-issues-and-improvements
+    
+    fix: reported issues and improvements
+
+[33mcommit 7ad7bf7b2fe50de1300445954684f96a57e6affe[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Tue Oct 19 14:35:47 2021 +0530
+
+    refactor: minor cleanups
+
+[33mcommit f0bdc4e669ab3545d06eb7e4daca3a50ef0fc604[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Oct 14 23:58:27 2021 +0530
+
+    Fixed auto updation of rate and tax on changing item
+
+[33mcommit be97d722b7e44fd44e0b13979e1b2e6591509db8[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Mon Sep 20 11:53:29 2021 +0530
+
+    Improved the svg layout in dashboard, when no data is available
+
+[33mcommit 0aa7eab0d3ddb7cec45070a7a073647133e5232e[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Fri Sep 17 14:48:35 2021 +0530
+
+    Improved dashboard layout
+
+[33mcommit e2f1c7742bc4ea8701d9603765cbf60511e89f6f[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Thu Sep 16 17:54:22 2021 +0530
+
+    Fixed scrolling issue in journal entry rows, also added some enhancements
+
+[33mcommit 59201366b7fa649f3fe8ad17292cf6c04ce325c4[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Wed Sep 15 17:51:39 2021 +0530
+
+    Refactored Business template, used isSalesInvoice computed property rather than directly checking there in the template for it
+
+[33mcommit fc8ba4da6a98c5fb64c38b47082d6eaeb38203ed[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Tue Sep 14 19:15:21 2021 +0530
+
+    Created a computed propert isSalesInvoice in the Base.vue component and using it in the minimal template
+
+[33mcommit 22d49f5c6f0af098840b2056db61d26799250b80[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Mon Sep 13 21:32:48 2021 +0530
+
+    Fix: Re-editing of notes in salesinvoice now possible
+
+[33mcommit 9c24eeb6ea63d8e87e21a9b6c2121a671e2a10cb[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Sat Sep 11 20:44:56 2021 +0530
+
+    Fix issue with attach image component
+
+[33mcommit 655c1a08932794fed5333484f3a8bc9c2d185ca3[m
+Author: Piyush Singhania <piyushsinghania28@gmail.com>
+Date:   Sat Sep 11 20:19:28 2021 +0530
+
+    fix purchase invoice incorrect to and from in minimal template
+
+[33mcommit 09594101ef520aa706862d2a09b601e3f7ee62a5[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Sat Sep 4 23:09:55 2021 +0530
+
+    fix date picker not showing right timezone
+
+[33mcommit eae8057571454895e9718414f4e2b6b25d21f3e0[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Sat Sep 4 21:27:58 2021 +0530
+
+    fix ability to load exisiting database
+
+[33mcommit 0ed6cc48c6aa1059278eb7232cfb692b85b28f70[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Sat Sep 4 21:07:00 2021 +0530
+
+    fix issue with creating new file due to formaula/default
+
+[33mcommit 649691939c5231b16399d9caaf05c4aa7fe6f45a[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 25 01:40:16 2021 +0530
+
+    fix create new database method
+
+[33mcommit 6343f113282b54e960691a89c2ec4d023ae442e3[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Aug 19 17:14:45 2021 +0530
+
+    add notes to basic template back
+
+[33mcommit 62359ba7aef61b323fbf8bc35f660cde4c787a77[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Thu Aug 19 00:08:30 2021 +0530
+
+    fix formatting
+
+[33mcommit 47abdb5ae3848ff3851761239720bff71872071b[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 23:30:35 2021 +0530
+
+    format document
+
+[33mcommit 87c944cd4f0941e4740617b597cc31113a722cf2[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 23:29:13 2021 +0530
+
+    format document
+
+[33mcommit fd8221a576ce4e3ff3d614c9b50bf28da25ff13f[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 23:27:39 2021 +0530
+
+    fix pdf generation
+
+[33mcommit 11e3474e8d293ba5533456dd23405e01294b8954[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 23:27:06 2021 +0530
+
+    fix how the download path is calculated
+
+[33mcommit 17d607ef14c41e075ffab85232f70c80036ab8bf[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 21:52:07 2021 +0530
+
+    add logging for async errors
+
+[33mcommit b11bb9527ab30cf21ddf3588e807b568f335bd83[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:31:05 2021 +0530
+
+    fix formatting
+
+[33mcommit aefd70b5e3ecc0d010e268eb0334247a9fb6d11a[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:30:09 2021 +0530
+
+    add gst details to all templates
+
+[33mcommit 7033683465bd76f3842cba21e8a2063095a96f97[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:26:35 2021 +0530
+
+    add gst information in the business template
+
+[33mcommit 7d07bd17b41f3ed7fd4619311fd2efe225b10476[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:20:07 2021 +0530
+
+    add ability to show account gstin in the basic template
+
+[33mcommit d32c1de82b631cc741bcdcc9df4199c4eccd90ee[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:07:31 2021 +0530
+
+    add gstin to party and also show up in quick edit
+
+[33mcommit b89314e0366245fd6e35e3d86402e2c6107b42bf[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 12:02:45 2021 +0530
+
+    fix api change for dialog.showModelBox
+
+[33mcommit 3ec4e0a9557f7d6cc8f3a3160c702392a9841a65[m
+Merge: 9b98bc9 9bc8cd9
+Author: Alan <2.alan.tom@gmail.com>
+Date:   Thu Sep 30 14:58:32 2021 +0530
+
+    Merge pull request #216 from 18alantom/fix-build
+    
+    fix: bump versions and background.js changes to get books to build.
+
+[33mcommit 9bc8cd9fddbf61c17ccf20ed828d43340334e2e6[m
+Author: 18alantom <2.alan.tom@gmail.com>
+Date:   Thu Sep 30 14:53:08 2021 +0530
+
+    chore: set node version
+
+[33mcommit a589358d10b5ce39e73c7ab54717abd65ab2991c[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Sep 8 22:42:25 2021 +0530
+
+    fix frappe charts version
+
+[33mcommit 1ce5f742f124361a301a762a6f2ae937a4c1c9be[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 21:08:01 2021 +0530
+
+    update some configs based on the latest electron builder
+
+[33mcommit ce29ebfb3ed8dde9108718c0625c7283a2928f8e[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Sat Sep 4 21:06:41 2021 +0530
+
+    upgrade packages
+
+[33mcommit 7c3af79ecc7ee2e32d866de3dd569bb2a0ac61a8[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 21:06:32 2021 +0530
+
+    upgrade electron to 8 and update vue cli electron builder
+
+[33mcommit c3b13380396186651d3f3da250a078e00175c13d[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 11:59:46 2021 +0530
+
+    upgrade electron form 6 to 7, because the inspector was crashing
+
+[33mcommit 0d73f756adbecc4a572c3982ab29d47d47e757b6[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 02:08:20 2021 +0530
+
+    fix build
+
+[33mcommit 1731087cc1d9d319321f5eb24c0af1d07ea684f1[m
+Author: Ankit Singhaniya <ankit.singhaniyaz@gmail.com>
+Date:   Wed Aug 18 02:07:52 2021 +0530
+
+    fix building
+
+[33mcommit 9b98bc9e91e20b71ec3dad4eac37868c3fde24a4[m
+Merge: 2c7d49d 6affbe4
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Tue May 26 18:22:16 2020 +0530
+
+    Merge pull request #144 from anilbhanushali/patch-1
+
+[33mcommit 6affbe4181e5c3048c3199f50bf825abc1143a25[m
+Author: Anil Bhanushali <shethia@gmail.com>
+Date:   Wed May 20 21:46:28 2020 +0530
+
+    Update README.md
+    
+    point git url to correct repo for cloning frappejs.
+
+[33mcommit 2c7d49d79e6427a55b57441d044054306cff9c60[m[33m ([m[1;33mtag: v0.0.3-beta.13[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon May 11 20:26:01 2020 +0530
+
+    v0.0.3-beta.13
+
+[33mcommit 7756002f9cc045e251f96b02420d28d330aad012[m
+Merge: fd15ce0 509cbee
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Mon May 11 20:18:13 2020 +0530
+
+    Merge pull request #113 from frappe/dependabot/npm_and_yarn/acorn-6.4.1
+
+[33mcommit fd15ce029f03eaa9f4d318274059eaead408b089[m
+Merge: d9bd736 73f2eaf
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Mon May 11 20:17:54 2020 +0530
+
+    Merge pull request #135 from varanauskas/patch-1
+
+[33mcommit 73f2eaf701ac49ec7dd7ff1070419f01df07e759[m
+Merge: 2b301f4 d9bd736
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Mon May 11 20:17:42 2020 +0530
+
+    Merge branch 'master' into patch-1
+
+[33mcommit d9bd73642b469482ce529f302896937048e62e87[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon May 11 20:09:39 2020 +0530
+
+    fix: Datepicker
+    
+    - Remove timezone adjustment
+
+[33mcommit ac05b7978981bb0bd4e4723b2a54fd337a2995ff[m
+Author: Rushabh Mehta <rmehta@gmail.com>
+Date:   Sun May 10 14:11:53 2020 +0530
+
+    Update README.md
+
+[33mcommit 2b301f414097d596b503513cd58ac52824ea3588[m
+Author: Tadas Varanauskas <tadas@varanauskas.lt>
+Date:   Fri May 8 16:59:42 2020 +0300
+
+    Change the currency of Lithuania to EUR
+    
+    Lithuania has switched to [EUR in 2015](https://ec.europa.eu/info/business-economy-euro/euro-area/euro/eu-countries-and-euro/lithuania-and-euro_en)
+    
+    Fixes #134
+
+[33mcommit eb1f9f91bc5ca04316577fa072c410640d10dbc2[m
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Thu May 7 13:40:10 2020 +0530
+
+    Update README.md
+
+[33mcommit 5600840bdb12356c78defe7125c9aa79cc321ea4[m[33m ([m[1;33mtag: v0.0.3-beta.12[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:51:08 2020 +0530
+
+    v0.0.3-beta.12
+
+[33mcommit 555374ce293817e18a5d534224ac751e0822a910[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:50:58 2020 +0530
+
+    fix: Update frappejs
+
+[33mcommit d5786b42a5dc9c731bbb2cc820475abce1f9ee54[m
+Merge: 8a2ba20 05566bb
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:40:37 2020 +0530
+
+    Merge branch 'master' of https://github.com/frappe/books
+
+[33mcommit 8a2ba2078018598a7f288b9c0420ad832136cff2[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:40:30 2020 +0530
+
+    fix: Update frappejs
+
+[33mcommit bad02d74e1f69221a92e07d19d5b68ac682756b6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:39:11 2020 +0530
+
+    fix: Adjust card sized for smaller window
+
+[33mcommit 05566bb95fe3f026d3f9181479c66ad27295ec23[m
+Merge: 2695c19 e2529ad
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Wed May 6 23:36:23 2020 +0530
+
+    Merge pull request #123 from rmehta/feat-partial-payments
+
+[33mcommit e2529ad11655ba06edfdb2fb4d8d80510ffdec3e[m
+Author: Rushabh Mehta <rmehta@gmail.com>
+Date:   Wed May 6 23:32:35 2020 +0530
+
+    fix: allow parital payments to invoices
+
+[33mcommit 2695c194a3f800925a199f91aea954a6acced346[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:29:32 2020 +0530
+
+    fix: Set max-width for cells in report
+
+[33mcommit dcfc6891fd7b609c8545c358fe75029884666bad[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed May 6 23:03:50 2020 +0530
+
+    fix: Use css to toggle row remove icon
+
+[33mcommit 4a5b55624f398a1b7a60faf3ca605b81f5d6e5e3[m[33m ([m[1;33mtag: v0.0.3-beta.11[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 23:33:07 2020 +0530
+
+    v0.0.3-beta.11
+
+[33mcommit 7cff40fe53c479be25ed5c4895a577ed46d63aba[m
+Merge: 5740cfd 7bb50c3
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Thu Apr 30 23:30:51 2020 +0530
+
+    Merge pull request #118 from frappe/update-electron-builder-plugin
+
+[33mcommit 7bb50c3153395c35998160f641a0e403f3a6eea5[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 23:14:32 2020 +0530
+
+    fix: Use forked cli plugin with updated electron builder
+
+[33mcommit 5740cfd29d8007c734db119c959a7e94c37dd49b[m[33m ([m[1;33mtag: v0.0.3-beta.10[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:47:38 2020 +0530
+
+    v0.0.3-beta.10
+
+[33mcommit 61775b13107be525e95e11cde07508276426d1d1[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:44:44 2020 +0530
+
+    fix: Add app icon
+
+[33mcommit e19b2d2d27a73e19b970957fe518f6da698b2d90[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:44:39 2020 +0530
+
+    fix: Update tailwind to 1.2.0
+
+[33mcommit 1ccbc76abf4217d601b9af6e9507f93b152d1351[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:44:23 2020 +0530
+
+    fix: Simplify date picker with an input
+
+[33mcommit 88dc90c0fa8d302dce04cbfd380c6f077ebbe838[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:43:24 2020 +0530
+
+    fix: Popover arrow styles for all positions
+
+[33mcommit 0819b6dea72287443ea931ab6b2bdbdaf3b70ffb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:43:06 2020 +0530
+
+    fix: Show Auto Update label
+
+[33mcommit af0c8bb3b0a700fe659cfd27887f46a6e9628716[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:42:22 2020 +0530
+
+    fix: Remove setup wizard description
+
+[33mcommit df1518f2add490ae52ee9373e0f21774a9d3a724[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:41:58 2020 +0530
+
+    fix: Handle case when fiscal dates are not found
+
+[33mcommit fb0744ba2b713d54d54423d524cde8afe4b240e1[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:41:20 2020 +0530
+
+    feat: Group Items in Link field
+
+[33mcommit c2509e41057e12e94814edf098c2ee6de9710e6e[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Apr 30 16:40:03 2020 +0530
+
+    fix: Get Started
+    
+    - Add documentation links
+
+[33mcommit 509cbee604be4e64783c87075f432d1017869d26[m
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Sun Mar 15 07:56:29 2020 +0000
+
+    chore(deps): bump acorn from 6.4.0 to 6.4.1
+    
+    Bumps [acorn](https://github.com/acornjs/acorn) from 6.4.0 to 6.4.1.
+    - [Release notes](https://github.com/acornjs/acorn/releases)
+    - [Commits](https://github.com/acornjs/acorn/compare/6.4.0...6.4.1)
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+[33mcommit ae101fab12260dd72d1b08634984e13d48c72c49[m[33m ([m[1;33mtag: v0.0.3-beta.9[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 10 14:09:30 2020 +0530
+
+    v0.0.3-beta.9
+
+[33mcommit 811cc582334fc8d0805c721434c458be5cc6f024[m[33m ([m[1;31mupstream/remove-fontmanager[m[33m, [m[1;31morigin/remove-fontmanager[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 10 13:16:05 2020 +0530
+
+    fix: Minor styling fixes
+    
+    - Left padding for Attach Image control in TwoColumnForm
+    - Error Popup padding in SetupWizard
+
+[33mcommit 3efbf5bebdcb07e969d1791176c6f8d8ef8bc813[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 10 13:15:23 2020 +0530
+
+    fix: Remove font manager until we find alternative
+    
+    - font-manager fails to build on WIndows and Linux
+
+[33mcommit 3f3c0741fae2c008715c4ede1665a6bedf68a39d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Feb 8 01:12:33 2020 +0530
+
+    chore: Add libfontconfig-dev package
+
+[33mcommit fdd5c49fd4b0f6b36708c908aac16b4206efcb90[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Feb 6 12:48:19 2020 +0530
+
+    fix(Color): Show badge only if value is set
+
+[33mcommit bb16c5ab560c23767ac76d9f4a5439743102da49[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Feb 6 12:47:55 2020 +0530
+
+    fix: Rename Template Default to Basic
+
+[33mcommit ec643ca3749c7cc1b5ea3bfd28eae3d9e3de0b70[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Feb 4 10:06:21 2020 +0530
+
+    fix: Set travis node version to 13
+
+[33mcommit b7fd2e8c4ac739526ef940c3446237f78c3af1f0[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Feb 4 01:33:33 2020 +0530
+
+    fix(Invoice Template): Right align subtotal area
+
+[33mcommit 48e22e041903a3934abb384a3b7fc18355419869[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Feb 4 01:33:18 2020 +0530
+
+    fix: Show logo and its checkbox in Customizer
+    
+    - Show selected color badge
+    - Hide checkbox label in TwoColumnForm
+
+[33mcommit c832baf585094b81ffd1ae4bb4367c33b5be07a1[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Feb 4 00:06:33 2020 +0530
+
+    fix: Update frappejs
+
+[33mcommit 138b0673a895ff48df18fb6a5a741ce76d4f472c[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:20:54 2020 +0530
+
+    feat: Invoice Template Customizer
+    
+    - Template, Color and Font fields in PrintSettings
+    - font-manager for loading system fonts
+    - 3 Invoice Templates: Default, Minimal and Business
+    - Delete unused old Templates
+    - Dont show Delete button in Singles
+    - Rename font family "Inter var experimental" to "Inter"
+
+[33mcommit 53167568435a6dea2f7b41242ce99d8ce1ebd146[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:12:34 2020 +0530
+
+    fix: Reset route on database change
+
+[33mcommit d181545c708c06012b25ac3d5fe20457a462654d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:11:22 2020 +0530
+
+    feat: Color control
+
+[33mcommit 0d431ae9c67714deb65a2202c07741996c61269f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:10:21 2020 +0530
+
+    feat: Text control
+
+[33mcommit 4784cd57933d7cb2ca0e2fdbec50888897cf2096[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:08:06 2020 +0530
+
+    fix: Disable pointer events when readonly
+
+[33mcommit 75a7e1d58d0b7d27cbc2820df5e60b78e57d2bd3[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:06:41 2020 +0530
+
+    fix: Show loading state in AutoComplete
+
+[33mcommit ce864c5d0c2e194d1237b452a1e7e5f64fc49366[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:34:12 2020 +0530
+
+    fix: Item Rate validation
+
+[33mcommit 7d4d2e6c503059f2d3db0e0396808538a9cd7241[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:28:44 2020 +0530
+
+    fix: Plural form in label
+
+[33mcommit 052556d132548bc1f9f27cfa42122b58900e0629[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:18:46 2020 +0530
+
+    fix: Support for loading state in Dropdown
+
+[33mcommit b9d6ae1c62505d50e635910538851333f58e8d83[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:17:44 2020 +0530
+
+    fix: Rounded arrow in Popover
+    
+    - Remove min width from popover content
+
+[33mcommit b346a61eb982fd2ccc163a58f50faf5f83e2acc8[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:08:15 2020 +0530
+
+    fix: Render defaults fields in TwoColumnForm
+
+[33mcommit 09fe18af5a17f638474f976d1f47c45085413880[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 19:03:53 2020 +0530
+
+    fix: Add padding to PageHeader
+
+[33mcommit 827ecfd809a13cfaba78ae4895c3bf37d3651745[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:25:02 2020 +0530
+
+    fix: Dont allow adding same item in another row
+
+[33mcommit 3dc893f00ac62deb6385979f56c6f2f779d4ce60[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:24:50 2020 +0530
+
+    fix: Table
+    
+    - Scrolling table after maxRowsBeforeOverflow
+    - Hover row
+    - Delete row
+
+[33mcommit 36554512502ff55179b61de4b793f7c1fe2c6db2[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:24:37 2020 +0530
+
+    fix: Base Control
+    
+    Use input-class prop instead of background to set background color
+
+[33mcommit 0e5df6104543749a85c277bcf4c7e43caa3d0adb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Feb 3 23:22:28 2020 +0530
+
+    fix: Popover
+    
+    - hideArrow prop
+    - Use Popover in Dropdown
+    - Rename prop show to showPopup
+
+[33mcommit d3bd5c26e012f5788a6a5efc95f2c8eb3c8bee5a[m[33m ([m[1;33mtag: v0.0.3-beta.8[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 16:33:30 2020 +0530
+
+    v0.0.3-beta.8
+
+[33mcommit 189aa70888dc64cf2f709c4e9e08561b65c60abc[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 16:32:55 2020 +0530
+
+    fix: Setup Wizard email error popup
+
+[33mcommit 463631d306a55fab0c065d084a2123868e0f42c7[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 16:31:45 2020 +0530
+
+    fix: Inline errors in TwoColumnForm
+
+[33mcommit f4fc9703bbe509244e8e5406b81c96229585538f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 16:31:03 2020 +0530
+
+    fix: Popover arrow
+    
+    - Use popper.js 2.x
+    - placement prop for uh, placement
+    - show prop for explicit show/hide
+
+[33mcommit 307083d7fe54c27aa199480f00bbc6b4c39734ce[m
+Merge: 12a43db 528efc9
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 12:05:23 2020 +0530
+
+    Merge branch 'master' of https://github.com/frappe/books
+
+[33mcommit 528efc9b6b6232e0c7227ef3e179520bf945d4e7[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 00:16:31 2020 +0530
+
+    fix: Lighter placeholder text color
+
+[33mcommit 01f970953e937a2eaa4138763241bce7dd0d95c6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 29 00:15:20 2020 +0530
+
+    fix: Settings Window
+    
+    - Show native frame in Linux
+    - Reload main window on browser close event
+
+[33mcommit dbf299c9617aa40bb58e28b0016d5a535c44a873[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 23:45:42 2020 +0530
+
+    fix: Loading state in Database Selector
+
+[33mcommit cec79e55d05b745673f2c73d49540bb964daa4d1[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 23:44:59 2020 +0530
+
+    fix: Show native titlebar in Linux
+
+[33mcommit 12a43db274daac0be9b34bc92d85bcd47b9c09ea[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 18:32:05 2020 +0530
+
+    fix: Rename toggleDropdown to togglePopover
+
+[33mcommit fba7df7e1050939372da12ace4d63d8a91880ea4[m
+Merge: c1fa2d3 3e44f08
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Tue Jan 28 17:19:43 2020 +0530
+
+    Merge pull request #110 from frappe/file-selector
+    
+    feat: File selector
+
+[33mcommit 3e44f08a4feb391f39cf005fe15ef5dd24acd6f4[m[33m ([m[1;31mupstream/file-selector[m[33m, [m[1;31morigin/file-selector[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 17:15:12 2020 +0530
+
+    fix: Update frappejs
+
+[33mcommit 27d848d868ca915fbaaff7ce7f4d13651969c0eb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 16:40:01 2020 +0530
+
+    feat: Ability to run patches
+
+[33mcommit 791ed52d2d031d36ab673be70c49f458b53f6a91[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 13:50:42 2020 +0530
+
+    fix: Antialiased text
+
+[33mcommit f6abaa1cabb55ef5b495cfadb43d0ef9ff7e91f6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 28 13:50:01 2020 +0530
+
+    feat: File selector for multi-company switching
+    
+    - Use config file to store preferences
+
+[33mcommit 045f38bb96b11d258c6411680dc8ad1b93a32a3f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 23 18:28:51 2020 +0530
+
+    fix: set window size dynamically
+
+[33mcommit c1fa2d36ef45dbd1223642b8a9cc4011d7f4bbbc[m
+Merge: a264a7f 0e07352
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 21 12:09:43 2020 +0530
+
+    Merge branch 'master' of https://github.com/frappe/books
+
+[33mcommit a264a7f0aa67681510dc9a4a62021864a7aa795d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Jan 21 12:08:22 2020 +0530
+
+    fix: Placeholder for AutoComplete and Link
+
+[33mcommit 0e07352980fd26cf9a734cdadf2f5fcb5650d497[m
+Author: Faris Ansari <netchampfaris@users.noreply.github.com>
+Date:   Mon Jan 20 18:27:28 2020 +0530
+
+    chore: Update Travis link
+
+[33mcommit e091988f16cd5e3547dfdea3e525861e3ecad499[m[33m ([m[1;33mtag: v0.0.3-beta.7[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Jan 3 00:01:03 2020 +0530
+
+    v0.0.3-beta.7
+
+[33mcommit b5a3ae2aa973b54bf134f5bc4ba9548ca33046f8[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 23:58:53 2020 +0530
+
+    chore: Change license to AGPLv3
+
+[33mcommit 36bbb2805efbfce5f084edaa15df354ff2614fea[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 23:52:26 2020 +0530
+
+    chore: Update Readme
+    
+    - Simplify installation steps
+    - Add badges
+
+[33mcommit 6ab5e109adf1707fa915bcb4dbcc32573beab9b6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 23:06:00 2020 +0530
+
+    feat: Rename to Frappe Books
+
+[33mcommit a24bbec88fc6a0d067033b05ee7e5bf9158be39f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:42:01 2020 +0530
+
+    fix: Update frappejs
+
+[33mcommit 488a8a52ea856ffd980cd44568dd298f898fc6f9[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:40:18 2020 +0530
+
+    fix: GetStarted
+    
+    - Mark cards as checked when task is completed
+
+[33mcommit a161e468cf7001fc95711f3504508ce00da0ef1a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:39:03 2020 +0530
+
+    fix: Move Tax to Setup in sidebar
+
+[33mcommit 1dcdc1c89801e417298b29aadfd415fb4609268d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:38:39 2020 +0530
+
+    fix: Rename 'Pending' to 'Unpaid'
+
+[33mcommit 3429abc3c8fa62d5da4f8d85861af5e650f8c755[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:38:19 2020 +0530
+
+    fix: Add missing frappe import
+
+[33mcommit bb80e2ec3a0165db0dff2015e7698bdd76d3df11[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:38:01 2020 +0530
+
+    fix: Fiscal Year in Jan, Feb, Mar
+
+[33mcommit 86f346913b7d4929a89fb035f8a6abef11b9368a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:36:57 2020 +0530
+
+    fix: Move openSettings to common utils
+
+[33mcommit 8133ad030086159c03ab9284c54af698c235fcff[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:35:01 2020 +0530
+
+    fix: PrintSetting quick edit fields
+
+[33mcommit 4c12755d1612e598644a164e79c20840f5fefe98[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Jan 2 22:34:12 2020 +0530
+
+    fix: Item actions
+
+[33mcommit 2926d8ff644c8a9af6fa72f3d3bc456d5379fa94[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 1 13:42:25 2020 +0530
+
+    fix: Numeric fields
+    
+    - Handle NaN values
+
+[33mcommit 67e9ce094d5a01174045444b95aa9d2eeda8d77a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Jan 1 13:41:57 2020 +0530
+
+    refactor: Setup wizard and company setup
+    
+    - Move setup logic into setupCompany.js
+    - Set setupComplete field in AccountingSettings
+    - move connectToLocalDatabase in utils
+
+[33mcommit 69434d53ebb3903742483577b601167dae195565[m[33m ([m[1;33mtag: v0.0.3-beta.6[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 16:17:27 2019 +0530
+
+    v0.0.3-beta.6
+
+[33mcommit 98e0f2ac8558557810ba8b7db4eb381780264fd9[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 16:13:15 2019 +0530
+
+    feat: Show app version in sidebar
+
+[33mcommit 144ff55395956870571b177321d12e3801fd40d1[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 16:05:37 2019 +0530
+
+    fix: Update frappejs
+
+[33mcommit 54e074329c6466470fc44a9cece34d627025c7ae[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 15:54:50 2019 +0530
+
+    fix: Disable Next button until values are filled
+
+[33mcommit 2e70a0167a7fb8083c1666f76708800ac256ecce[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 15:53:13 2019 +0530
+
+    fix: Add validations for email and phone fields
+
+[33mcommit 444cd9e441e43e0df2d72199e11d4f5f9f2932e9[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 12:39:40 2019 +0530
+
+    fix: Remove dashboard setup code
+
+[33mcommit db9d897d0db0c513fce9df0f875bef4fa6608557[m[33m ([m[1;33mtag: v0.0.3-beta.5[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 12:09:57 2019 +0530
+
+    v0.0.3-beta.5
+
+[33mcommit fefe229c2eff613e725120f6b38ca32ac60b3a20[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 12:09:42 2019 +0530
+
+    fix: Update frappejs
+
+[33mcommit a3506bf015fd8db27411d74d2bc892c534ea36a3[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 27 12:07:39 2019 +0530
+
+    feat: Auto Update
+    
+    - Ability to disable auto update from System tab in Settings
+
+[33mcommit de19af85c4db1a98386ef420125b83f93b7a5b21[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 23:38:17 2019 +0530
+
+    fix: Incorrect accountType bug
+    
+    - Set accountType as non mandatory
+    - accountType can be set from parent, but it is not required
+
+[33mcommit 1e44cc9faee8f5aee7fea78ba275fead6baff817[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 23:37:26 2019 +0530
+
+    fix: Move importCOA file to accounting
+
+[33mcommit c846118055ab8d87d93d2068136721b343d49abb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 23:36:45 2019 +0530
+
+    fix: Disable resizing in small windows
+
+[33mcommit ce0cc1e7e6c09330e96d971a120ae6ced5ac66eb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 19:35:48 2019 +0530
+
+    feat: Confirmation message on Invoice submit
+
+[33mcommit 0b339a14c5d69be053a1b0b44445c57e9c454205[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 19:31:28 2019 +0530
+
+    fix: Show blank cells instead of 0.00 in GL
+
+[33mcommit d05a50f01de9059b02a8c32120c6927f1cbb326d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 19:15:41 2019 +0530
+
+    feat: Party Widget in QuickEditForm
+
+[33mcommit dc160a423235397bb08ff40930084afb8269b9bb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 19:15:25 2019 +0530
+
+    fix: Update party outstanding amount
+
+[33mcommit 061c4052128f2e9bd482df0549bc60981a481bf4[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 26 19:14:27 2019 +0530
+
+    fix: Go back on BackLink click
+
+[33mcommit 2e5bd11957aa80a98ae3d5c65a1d7d658532f99d[m[33m ([m[1;33mtag: v0.0.3-beta.4[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 18:42:54 2019 +0530
+
+    v0.0.3-beta.4
+
+[33mcommit 0ff93a7c6a8c44f8cb4438c5aae3eb227f838c76[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 18:42:39 2019 +0530
+
+    fix: Add entitlement to disable library validation
+    
+    https://github.com/electron-userland/electron-builder/issues/3940#issuecomment-501702531
+
+[33mcommit f6eda9fd0adc7eb675c844f0748f2cf808e49e53[m[33m ([m[1;33mtag: v0.0.3-beta.3[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 16:20:49 2019 +0530
+
+    v0.0.3-beta.3
+
+[33mcommit 852288307e53f2280e30194b3a4bacf4d47d1310[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 16:06:05 2019 +0530
+
+    fix: Add electron-notarize dependency
+
+[33mcommit ed2cbaae06d72ecf911e0b33b8ab7f6fafa6e09a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 15:44:28 2019 +0530
+
+    chore: Add config for signing and notarize
+
+[33mcommit 18b49e19697fe2f38c51984c1707960b3ad6c445[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 24 15:42:25 2019 +0530
+
+    fix: Update frappejs
+
+[33mcommit 7dd6dbc9afec775f248595572a4cf56d028c1753[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 19:02:49 2019 +0530
+
+    fix: Read Only prop override
+
+[33mcommit bef259bd841e2992a1ddc53da3ee8cf81730e9b5[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 19:02:34 2019 +0530
+
+    fix: Get currency for party
+
+[33mcommit 15f61f17ff0b734dafea961dd767db524cb0c8cb[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 19:02:18 2019 +0530
+
+    fix: Uncomment item filter block
+
+[33mcommit 47ce6117d14ca14f51da19bab6ba1a57133224d4[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 18:50:47 2019 +0530
+
+    fix: Add Item Type Product or Service
+    
+    - Automatically set Income and Expense account and hide them from View
+
+[33mcommit f2071c96df02fb51fd2d1f3dbf9e7a97a2a3af4a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 18:21:04 2019 +0530
+
+    fix: Scrolling in GetStarted page
+
+[33mcommit a7b45c626ab17473f4288dfd7f37aa631a6e68f6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 16:07:30 2019 +0530
+
+    feat: Create accounts in CoA directly
+    
+    - Common error handling method for documents
+    - Add group hover in tailwind
+
+[33mcommit 802b134cd444a42179730be3817ba8e8d1facf42[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 13:56:57 2019 +0530
+
+    fix: Dont set unused fields
+
+[33mcommit 54616ef926834af4e90260c3c3139e044ccd7e70[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 13:56:41 2019 +0530
+
+    fix: Add Chart of Accounts to sidebar
+
+[33mcommit 6e69b20ad6919c00e00b1bd720590de86092fe1b[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 13:55:24 2019 +0530
+
+    fix: Bold 'Create' action to separate from option
+
+[33mcommit 3ce726b07a0d916544e77940be8fd47ec0289500[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 23 13:54:18 2019 +0530
+
+    fix: Replace 'database' with 'file'
+    
+    - Simpler wording for user facing string
+    - Add a help text for more information
+
+[33mcommit 5614b4dca6dc6c810bcc11e4ae0941f47335e9f8[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 21:25:42 2019 +0530
+
+    fix: Consistent import
+
+[33mcommit f8fbb5ca0201952fef936dabb572853f2338c7f9[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 21:25:08 2019 +0530
+
+    chore: Delete old/unused components
+
+[33mcommit 2d2f5eb57e93c5b247c957d5317d1837b7f80a76[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 21:19:01 2019 +0530
+
+    style: Format with prettier
+
+[33mcommit a779c91679888782b10b1af6fe9b59c9bf557c0d[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 20:17:43 2019 +0530
+
+    fix: Remove deepmerge and add lodash
+
+[33mcommit e9082cbdaf0f4ea7e4a79f5888071136eb78f710[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 20:17:22 2019 +0530
+
+    feat: Add Icons used in GetStarted page
+
+[33mcommit 86d841da7a28cee1dc4c7dc700ce14b588381267[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 21 20:16:50 2019 +0530
+
+    feat: Add GetStarted page
+    
+    - GetStarted model to track progress
+
+[33mcommit c9d0219320309d34f563af466ae4ab8603e7d5a9[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 20 12:24:12 2019 +0530
+
+    fix: Minor component fixes
+    
+    - Use meta.getKeywordFields instead of keywordFields
+    - Make the full "Add Row" Row clickable
+    - Highlight today's date in DatePicker
+    - Set default filters on activated in Report
+
+[33mcommit c0c7a9edbbb263808d1253e67c89c7f12dcf3497[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 20 12:22:14 2019 +0530
+
+    fix: Better logic for sidebar active state
+    
+    - Keep the sidebar item active even if its form is open
+
+[33mcommit 9726fe4e8a63d54f47b1292bdd2f0c7131ba9ac2[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 20 12:20:43 2019 +0530
+
+    fix: Minor fixes
+    
+    - Better error message in ledgerPosting
+    - Remove models key from model/index.js
+    - Format AccountingLedgerEntry.js
+    - Set default Account to Cash for Payment Type Cash
+    - Add placeholders for Payment Form
+    - Add key to v-for elements in TwoColumnForm
+
+[33mcommit 7fd5ce01d11f3d6bb4bb7bd5614b3fdccecd7290[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 20 12:15:50 2019 +0530
+
+    fix: Set fiscal year start and end date correctly
+
+[33mcommit 6e2c5cdf96835754486efe1454e2fd0328865729[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 20 12:14:31 2019 +0530
+
+    fix: JournalEntry fixes
+    
+    - Form actions
+    - Set debit / credit in 2nd row automatically
+    - Validate before update and insert
+    - Add JournalEntry as filter option in General Ledger
+    - Commonify actions for document in InvoiceForm, JournalEntryForm and QuickEditForm
+    - DropdownWithActions component
+
+[33mcommit bd5ee080c23aba9ad305d6a2f66e916fb664b738[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 18 23:54:58 2019 +0530
+
+    fix: Formatting and model name
+
+[33mcommit d104a4ffa498dea405e8c24158e1a5a7549815bc[m[33m ([m[1;33mtag: v0.0.3-beta.2[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 17 12:35:47 2019 +0530
+
+    v0.0.3-beta.2
+
+[33mcommit 33c16db8dbf8f19b6f6d0a2d498c5d9ecc304564[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 17 12:34:49 2019 +0530
+
+    fix: Show WindowsTitleBar in Linux too
+
+[33mcommit beb3105e9bf134a733e24d08696608e24a7bc20f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 19:22:14 2019 +0530
+
+    fix: Setup Wizard fixes
+    
+    - Company Logo and Name section
+    - Disable next button on click
+    - Set company logo in PrintSettings
+    
+    Other
+    - Add brand color to tailwind config
+    - Disabled button
+    - Override inputClass using a function
+
+[33mcommit 0277b7c0e745d5269cae80b7d6371845bfb2b7b4[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 18:04:10 2019 +0530
+
+    fix: Set Party defaults
+    
+    - Set default Account and Currency
+    - Reorder fields
+
+[33mcommit 6e97fe4ad51802a8d3bbde4d846a07722fccaadd[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:55:57 2019 +0530
+
+    fix: Active Tab Icon color in Settings
+
+[33mcommit bdbad0913ebcb63bfb607705e5cceff072d6c0c6[m[33m ([m[1;33mtag: v0.0.3-beta.1[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:27:35 2019 +0530
+
+    v0.0.3-beta.1
+
+[33mcommit 9481a4c072f5b9da01cf76928f3b90e51dcb2fe5[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:27:11 2019 +0530
+
+    chore: Update frappejs
+
+[33mcommit 2212b007ee4cdb5f1e116b99b46f17dcb220b53f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:26:53 2019 +0530
+
+    fix: Enable maximise button in Mac
+
+[33mcommit 2db4484ab2fff936d70dd865025fc9c5b5e53daf[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:10:59 2019 +0530
+
+    chore: Dont git add in lint-staged
+
+[33mcommit 66547d982498543383b7954cbff5ebe486f11b00[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:10:35 2019 +0530
+
+    fix: Minor styling
+
+[33mcommit 168aa607fb8d8e9028fd5cf1e798e0fefe720d47[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:08:22 2019 +0530
+
+    fix: Scrollbar styling in Report container
+
+[33mcommit 162b5e983f66cb0d83c69dec8d6d1aeeff471a4f[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 17:04:22 2019 +0530
+
+    fix: Titlebar for Windows
+    
+    - Add window-no-drag to areas that should be clickable
+    - Top left menu in Windows
+    - Enable window transparency only in Mac
+
+[33mcommit 655bb8f295eb99888418939b5a9873c81929a2f8[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Mon Dec 16 16:57:28 2019 +0530
+
+    fix: Regex for windows path
+
+[33mcommit edda250d6e9200fcfc9903f506c13e7994a5742b[m[33m ([m[1;33mtag: v0.0.3-beta.0[m[33m)[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 13 21:55:49 2019 +0530
+
+    v0.0.3-beta.0
+
+[33mcommit ffcd81c7bc4451438be1d77b6f5f61eaf64a81b6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 13 15:35:01 2019 +0530
+
+    chore: Travis script for electron build
+
+[33mcommit 20b7f0d0ac3e808d9c492a470c687989ea1193ce[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 13 12:27:24 2019 +0530
+
+    fix: Remove balance from quickEdit
+
+[33mcommit fca0a8986f32d69c32cc2d508d03ffa6241bf9db[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 13 12:25:23 2019 +0530
+
+    fix: Rename "No" to "Unit"
+    
+    - fix eslint issues
+
+[33mcommit 6ad61976b8d606709487716d555d7d5d1309963b[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Fri Dec 13 01:04:37 2019 +0530
+
+    fix: Invoice
+    
+    - Sales Invoices -> Invoices
+    - Purchase Invoice -> Bills
+    - Set default quantity as 1
+    - Actions for Supplier
+
+[33mcommit dd4fdb234360cd539808dadfe80bc564d2536c20[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 12 23:18:41 2019 +0530
+
+    fix: Dashboard
+    
+    - Refresh dashboard charts when visited from another page
+
+[33mcommit 3a72dc6d0d9cb886761c7b8fce4aa639f6d1a088[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 12 23:10:34 2019 +0530
+
+    fix: Minor fixes
+    
+    - Placeholder in Setup Wizard
+    - Import frappe-chart styles
+    - Destroy popper if it exists
+    - Placeholder for Date
+
+[33mcommit e8370aa8ab2229f27106530988d41c4dc4ae6d7e[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 12 23:07:43 2019 +0530
+
+    chore: Migrate project structure to Vue CLI
+    
+    - Electron build using vue-cli-plugin-electron-builder
+
+[33mcommit 01d9191dcc467acc04cc3111101fd23dfd96b7d6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 17:54:44 2019 +0530
+
+    fix: Update scroll position in nextTick
+
+[33mcommit 7baa7a7c59806545a8ac8c96ab88592fb0bd5cbe[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 17:54:32 2019 +0530
+
+    fix: getChildren in CoA
+
+[33mcommit 32bed65ca2b1f8860d4d8d3748138bda31668870[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 17:54:15 2019 +0530
+
+    fix: PeriodSelector styling
+
+[33mcommit 865bf1f60ed55f3ce0923961ccd4ff19271d3788[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 17:54:02 2019 +0530
+
+    fix: Set filters from route in ListView
+
+[33mcommit 185b87bc2b7427a3229eac38878acb7c457f1e6b[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 15:08:20 2019 +0530
+
+    fix: Standardise rounded scale
+
+[33mcommit 159134a8506cfeccf444918df03e96ddca2e63e6[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 14:40:27 2019 +0530
+
+    fix(InvoiceForm): Move customer field to left
+    
+    - and Date to right
+    - Remove party address information
+
+[33mcommit f701bba627b4ebe70122c8893fdf9a8e8e13c62a[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 14:39:16 2019 +0530
+
+    fix: flex-center utility
+
+[33mcommit 466622f07459a3722227843213132b87eb0f7b5c[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 14:35:46 2019 +0530
+
+    fix: Refactor Popover to use Portal and Popper.js
+
+[33mcommit df6ace3b8d6837be0ec82b2ff6c5fa57e1fed5ba[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 11 14:34:27 2019 +0530
+
+    feat: DatePicker
+
+[33mcommit 24a768f6adfab1057a04182b7dc0e98f2c22f6da[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 10 14:55:11 2019 +0530
+
+    fix: Commonify error handling for document actions
+
+[33mcommit fa6d519836829c9f8750a983ae05fbb0ecac23f8[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Tue Dec 10 01:50:32 2019 +0530
+
+    refactor: Use knex for query building
+
+[33mcommit 0b1dbca73490505830b01ff2e50410dd4cb5ecbe[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 7 00:14:04 2019 +0530
+
+    fix: Remove unused routes and components
+
+[33mcommit 688083c28d285c73d335de00d63e2ad71a796344[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Sat Dec 7 00:13:37 2019 +0530
+
+    fix: Migrate makePDF method from frappejs
+
+[33mcommit d4c997317d840327ab1b83870b0f401e96951cc5[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 5 02:38:55 2019 +0530
+
+    fix: Undo hide fields
+
+[33mcommit 26826488d862d92db2d923dc469870206990352e[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 5 00:11:56 2019 +0530
+
+    fix: migrate then postStart
+
+[33mcommit ff0baa58e52a7c8c91e5197f1e77be7a0329045b[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 5 00:11:39 2019 +0530
+
+    fix: Remove unused props
+
+[33mcommit 5f60740accffd0c11b855f0d748b906aff13e43e[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 5 00:11:29 2019 +0530
+
+    fix: Cache router-view on route.path
+
+[33mcommit 83ce1cf5a856ccd9523dfca95d54462c8bafb933[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Thu Dec 5 00:10:46 2019 +0530
+
+    fix: Show errors in a dialog
+
+[33mcommit 380acc4c1280935f59817c16db73c2807f2aff63[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 4 22:56:40 2019 +0530
+
+    fix: BackLink component
+
+[33mcommit 945dee68364f690dd0e75c1f139060ca784177de[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 4 22:56:17 2019 +0530
+
+    fix: Replace route if same doctype
+
+[33mcommit 7916619754adabb61d510ae42516e8e778569cbc[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 4 22:55:12 2019 +0530
+
+    fix: Remove Payments from sidebar
+
+[33mcommit 2dd7176c5319bd1aa4fa5c17f797173980b01594[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 4 22:54:52 2019 +0530
+
+    fix: Profit and Loss
+    
+    - Fix check for hasData
+    - Blank row rendering
+
+[33mcommit 50b184a9fc451b6a6f6f64ce86d4ce0f702667e0[m
+Author: Faris Ansari <netchamp.faris@gmail.com>
+Date:   Wed Dec 4 22:53:28 2019 +0530
+
+    fix: Cashflow
+    
+    - Simple cashflow from Bank and Cash accounts
