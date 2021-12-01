@@ -27,7 +27,7 @@
         @remove="removeRow(row)"
       />
     </div>
-    <Row
+    <!--<Row
       :ratio="ratio"
       class="text-gray-500 cursor-pointer border-transparent px-2 w-full"
       v-if="!isReadOnly"
@@ -56,7 +56,7 @@
       >
         {{ value.length }} rows
       </div>
-    </Row>
+    </Row>-->
   </div>
 </template>
 

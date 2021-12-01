@@ -16,18 +16,18 @@
         <Button
           v-if="showSave"
           type="primary"
-          class="text-white text-xs ml-2"
+          class="text-white ml-2 text-md"
           @click="onSaveClick"
         >
-          {{ _('Save') }}
+          {{ doctype == 'SalesInvoice' ? _('Vender') : _('Comprar') }}
         </Button>
-        <Button
+        <!--<Button
           v-if="!doc._dirty && !doc._notInserted && !doc.submitted"
           type="primary"
           class="text-white text-xs ml-2"
           @click="onSubmitClick"
           >{{ _('Submit') }}</Button
-        >
+        >-->
       </template>
     </PageHeader>
     <div class="flex" v-if="doc">
@@ -165,7 +165,8 @@
             <div class="flex justify-between mt-2">
               <div class="w-1/3 text-left">
                 <label style="color: gray; font-family: verdana">
-                  Productoa a Vender
+                  Productos a
+                  {{ doctype == 'SalesInvoice' ? 'Vender' : 'Comprar' }}
                 </label>
               </div>
 
@@ -179,12 +180,12 @@
                 />
               </div>
             </div>
-            <div class="mt-6 px-6">
+            <div class="mt-4 px-6">
               <FormControl
                 :df="meta.getField('items')"
                 :value="doc.items"
                 :showHeader="true"
-                :max-rows-before-overflow="4"
+                :max-rows-before-overflow="7"
                 @change="(value) => doc.set('items', value)"
                 :read-only="doc.submitted"
               />
@@ -206,10 +207,7 @@
               />
             </div>
             <div class="w-64">
-              <div class="flex pl-2 justify-between py-3 border-b">
-                <div>{{ _('Subtotal') }}</div>
-                <div>{{ formattedValue('netTotal') }}</div>
-              </div>
+              <div class="flex pl-2 justify-between py-3 border-b"></div>
               <div
                 class="flex pl-2 justify-between py-3"
                 v-for="tax in doc.taxes"
@@ -237,7 +235,7 @@
                   text-base
                 "
               >
-                <div>{{ _('Grand Total') }}</div>
+                <div>{{ _('Total') }}</div>
                 <div>{{ formattedValue('grandTotal') }}</div>
               </div>
               <div
@@ -326,10 +324,6 @@ export default {
           fieldName: 'amount',
         },
         {
-          title: 'Fecha Vencimiento',
-          fieldName: 'dateExpired',
-        },
-        {
           title: 'Descripcion',
           fieldName: 'description',
         },
@@ -393,6 +387,7 @@ export default {
     },
     getItemSelected(value) {
       this.itemSelected = value;
+      this.amount = 1;
     },
     async getItem() {
       let item;
@@ -406,14 +401,42 @@ export default {
         return undefined;
       }
     },
+    existInList(name) {
+      for (let i = 0; i < this.doc.items.length; i++) {
+        if (this.doc.items[i].item === name) return true;
+      }
+      return false;
+    },
+    //Manejo de errores
     validateShop(item) {
       if (item == undefined) {
-        //producto no encontrado
+        //Producto no encontrado
+        handleErrorWithDialog(
+          {
+            message: `El producto "${item.name}" no se encontro en la base de datos.`,
+          },
+          this.doc
+        );
+        return true;
+      }
+
+      if (this.existInList(item.name)) {
+        //Producto ya se encuentra en lista
+        handleErrorWithDialog(
+          { message: `El producto "${item.name}" ya fue agregado a la lista.` },
+          this.doc
+        );
         return true;
       }
 
       if (item.amount < this.amount) {
-        //no se cuenta con la cantidad necesaria
+        //No se cuenta con la cantidad necesaria
+        handleErrorWithDialog(
+          {
+            message: `El producto "${item.name}" no cuenta con stock suficiente.`,
+          },
+          this.doc
+        );
         return true;
       }
 
@@ -447,14 +470,16 @@ export default {
       document.quantity = this.amount;
       document.baseRate = item.costRate;
       this.doc.items.push(document);
-      console.log(this.doc.items);
     },
     async addItem() {
+      console.log(this);
+      console.log(this.doc);
       let item = await this.getItem();
       if (this.validateShop(item)) return;
 
       let data = this.createData();
       this.createDocument(data, item);
+      this.amount = 1;
     },
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;

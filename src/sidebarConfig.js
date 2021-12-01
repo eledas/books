@@ -30,6 +30,21 @@ const config = {
       route: '/list/Supplier'
     },
     {
+      title: _('Clientes'),
+      icon: getIcon('supplier'),
+      route: '/list/Customer'
+    },
+    {
+      title: _('Ventas'),
+      icon: getIcon('sales'),
+      route: '/list/SalesInvoice'
+    },
+    {
+      title: _('Compras'),
+      icon: getIcon('purchase'),
+      route: '/list/PurchaseInvoice'
+    },
+    {
       title: _('Sales'),
       icon: getIcon('sales'),
       route: '/list/SalesInvoice',

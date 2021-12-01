@@ -2,6 +2,6 @@ import { _ } from 'frappejs/utils';
 
 export default {
   doctype: 'Customer',
-  title: _('Customers'),
-  columns: ['name', 'phone', 'outstandingAmount']
+  title: _('Clientes'),
+  columns: ['name', 'phone']
 };

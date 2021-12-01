@@ -3,11 +3,11 @@ export default {
   doctype: 'DocType',
   isChild: 1,
   keywordFields: [],
-  tableFields: ['item', 'tax', 'quantity', 'rate', 'amount'],
+  tableFields: ['item',  'quantity', 'rate'],
   fields: [
     {
       fieldname: 'item',
-      label: 'Item',
+      label: 'Producto',
       fieldtype: 'Link',
       target: 'Item',
       required: 1,
@@ -30,14 +30,14 @@ export default {
     },
     {
       fieldname: 'quantity',
-      label: 'Quantity',
+      label: 'Cantidad',
       fieldtype: 'Float',
       required: 1,
       formula: row => row.quantity || 1
     },
     {
       fieldname: 'rate',
-      label: 'Rate',
+      label: 'Precio',
       fieldtype: 'Currency',
       required: 1,
       formula: async (row, doc) => {
