@@ -6,11 +6,8 @@ export default {
   title: _('Ventas'),
   formRoute: name => `/edit/SalesInvoice/${name}`,
   columns: [
-    'customer',
     'name',
-    getStatusColumn('SalesInvoice'),
     'date',
     'grandTotal',
-    'outstandingAmount'
   ]
 };

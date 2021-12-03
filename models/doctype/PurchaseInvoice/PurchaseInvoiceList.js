@@ -8,9 +8,7 @@ export default {
   columns: [
     'supplier',
     'name',
-    getStatusColumn('PurchaseInvoice'),
     'date',
-    'grandTotal',
-    'outstandingAmount'
+    'grandTotal'
   ]
 };

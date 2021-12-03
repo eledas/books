@@ -3,7 +3,7 @@ import utils from '../../../accounting/utils';
 
 export default {
   name: 'Payment',
-  label: 'Payment',
+  label: 'Pagos',
   isSingle: 0,
   isChild: 0,
   isSubmittable: 1,

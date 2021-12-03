@@ -15,7 +15,7 @@ export default {
   settings: 'SalesInvoiceSettings',
   fields: [
     {
-      label: 'Invoice No',
+      label: 'Venta No',
       fieldname: 'name',
       fieldtype: 'Data',
       required: 1,
@@ -23,13 +23,13 @@ export default {
     },
     {
       fieldname: 'date',
-      label: 'Date',
+      label: 'Fecha',
       fieldtype: 'Date',
       default: () => new Date().toISOString().slice(0, 10),
     },
     {
       fieldname: 'customer',
-      label: 'Customer',
+      label: 'Cliente',
       fieldtype: 'Link',
       target: 'Customer',
       required: 1,
@@ -95,7 +95,7 @@ export default {
     },
     {
       fieldname: 'grandTotal',
-      label: 'Grand Total',
+      label: 'Total',
       fieldtype: 'Currency',
       formula: (doc) => doc.getGrandTotal(),
       readOnly: 1,

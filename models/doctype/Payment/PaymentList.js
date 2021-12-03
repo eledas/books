@@ -7,7 +7,7 @@ export default {
   columns: [
     'party',
     {
-      label: 'Status',
+      label: 'Estado',
       fieldname: 'status',
       fieldtype: 'Select',
       size: 'small',

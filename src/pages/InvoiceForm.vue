@@ -3,21 +3,22 @@
     <PageHeader>
       <BackLink slot="title" />
       <template slot="actions">
-        <!--<StatusBadge :status="status" />-->
+        <StatusBadge :status="status" />
         <Button
           v-if="doc.submitted"
-          class="text-gray-900 text-xs ml-2"
+          class="text-gray-900 text-lg ml-2"
           :icon="true"
           @click="routeTo(`/print/${doc.doctype}/${doc.name}`)"
         >
-          Print
+          Imprimir
         </Button>
-        <DropdownWithActions class="ml-2" :actions="actions" />
+        <!--<DropdownWithActions class="ml-2" :actions="actions" />-->
         <Button
           v-if="showSave"
           type="primary"
-          class="text-white ml-2 text-md"
+          class="text-white ml-2 text-lg"
           @click="onSaveClick"
+          :disabled="this.doc.items.length === 0"
         >
           {{ doctype == 'SalesInvoice' ? _('Vender') : _('Comprar') }}
         </Button>
@@ -31,7 +32,7 @@
       </template>
     </PageHeader>
     <div class="flex" v-if="doc">
-      <div class="w-1/2 mb-1 mt-2 px-10" v-if="meta">
+      <div class="w-3/5 mb-1 mt-2 px-3" v-if="meta">
         <div
           class="border rounded-lg shadow h-full flex flex-col justify-between"
           style="width: 100%; height: 100%"
@@ -53,6 +54,18 @@
                   :read-only="doc.submitted"
                 />
               </div>
+
+              <!--<div class="w-1/3 ext-right">
+                <FormControl
+                  class="mt-2 text-base"
+                  input-class="bg-gray-100 px-3 py-2 text-base"
+                  :df="meta.getField('account')"
+                  :value="doc.account"
+                  :placeholder="'Account'"
+                  @change="(value) => doc.set('account', value)"
+                  :read-only="doc.submitted"
+                />
+            </div>-->
             </div>
             <div class="flex justify-between mt-4">
               <div class="w-2/4 px-2">
@@ -69,13 +82,14 @@
                       text-base
                       rounded
                     "
+                    onclick="this.select()"
                     placeholder=" "
                     type="text"
                     v-model="producto"
                     @keyup="buscarProductos"
                   />
                   <label class="bg-gray-100 placeholder text-base"
-                    >Productos</label
+                    >Buscar</label
                   >
                 </div>
               </div>
@@ -93,10 +107,12 @@
                       text-base
                       rounded
                     "
-                    placeholder=" "
+                    ref="cantidad"
+                    placeholder=""
                     type="number"
                     min="0"
                     v-model="amount"
+                    onclick="this.select()"
                     @keyup="activateButton"
                     @change="activateButton"
                   />
@@ -123,6 +139,7 @@
                     type="number"
                     min="0"
                     v-model="newRate"
+                    onclick="this.select()"
                     @keyup="validateNewRate"
                     @change="validateNewRate"
                   />
@@ -138,7 +155,7 @@
                   type="tird"
                   v-if="doc"
                   class="bg-success text-white text-md"
-                  :disabled="desactivateButton"
+                  :disabled="desactivateButton || doc.submitted"
                 >
                   {{ _('Agregar Producto') }}
                 </Button>
@@ -156,10 +173,10 @@
           </div>
         </div>
       </div>
-      <div class="w-1/2 mb-1 mt-2" v-if="meta">
+      <div class="w-2/5 mb-1 mt-2 px-3" v-if="meta">
         <div
           class="border rounded-lg shadow h-full flex flex-col justify-between"
-          style="width: 90%; height: 100%"
+          style="width: 100%; height: 100%"
         >
           <div class="mt-6 px-6">
             <div class="flex justify-between mt-2">
@@ -170,13 +187,25 @@
                 </label>
               </div>
 
-              <div class="w-1/3 ext-right">
+              <div class="w-1/3 ext-left">
                 <FormControl
-                  input-class="bg-gray-100 px-3 py-2 text-base text-right"
-                  :df="new Date()"
-                  :value="`${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`"
-                  @change="(value) => doc.set('date', value)"
+                  class="text-base"
+                  input-class="bg-gray-100 p-2 text-lg font-semibold"
+                  :df="meta.getField(partyField.fieldname)"
+                  :value="doc[partyField.fieldname]"
+                  :placeholder="doctype === 'SalesInvoice' ? 'CF' : 'Anonimo'"
+                  @change="
+                    (value) =>
+                      doc.set(
+                        partyField.fieldname,
+                        doctype === 'SalesInvoice' ? 'CF' : value
+                      )
+                  "
+                  @new-doc="
+                    (party) => doc.set(partyField.fieldname, party.name)
+                  "
                   :read-only="doc.submitted"
+                  :disabled="true"
                 />
               </div>
             </div>
@@ -197,7 +226,7 @@
           >
             <div class="flex-1 mr-10">
               <FormControl
-                v-if="!doc.submitted || doc.terms"
+                v-if="!doc.submitted"
                 :df="meta.getField('terms')"
                 :value="doc.terms"
                 :show-label="true"
@@ -251,8 +280,8 @@
                   text-base
                 "
               >
-                <div>{{ _('Outstanding Amount') }}</div>
-                <div>{{ formattedValue('outstandingAmount') }}</div>
+                <!--<div>{{ _('Outstanding Amount') }}</div>
+                <div>{{ formattedValue('outstandingAmount') }}</div>-->
               </div>
             </div>
           </div>
@@ -268,7 +297,7 @@ import TableView from '../components/Tableview.vue';
 import PageHeader from '@/components/PageHeader';
 import Button from '@/components/Button';
 import FormControl from '@/components/Controls/FormControl';
-import DropdownWithActions from '@/components/DropdownWithActions';
+//import DropdownWithActions from '@/components/DropdownWithActions';
 import BackLink from '@/components/BackLink';
 import {
   openSettings,
@@ -288,7 +317,7 @@ export default {
     //StatusBadge,
     Button,
     FormControl,
-    DropdownWithActions,
+    //DropdownWithActions,
     BackLink,
   },
   provide() {
@@ -378,23 +407,120 @@ export default {
   },
   methods: {
     routeTo,
+    asignarData() {
+      this.doc.account = 'Activos - 1';
+      this.doc.outstandingAmount = 0.0;
+      if (this.doctype === 'SalesInvoice') {
+        this.doc.customer = 'CF';
+      } else {
+        this.doc.supplier =
+          this.doc.supplier !== null ? this.doc.supplier : 'Anonimo';
+        this.doc.exchangeRate = 1;
+      }
+    },
     async onSaveClick() {
-      this.doc.customer = 'cf';
-      console.log(this.doc)
+      this.asignarData();
       await this.doc.set(
         'items',
         this.doc.items.filter((row) => row.item)
       );
-      console.log(this.doc)
-      return this.doc.insertOrUpdate().catch(error=>{
-        console.log(error);
-        this.handleError});
+      this.onSubmitClick();
+      /*
+        try {
+        let paymentFor = await frappe.getNewDoc('PaymentFor');
+        let payment = await frappe.getNewDoc('Payment');
+
+        paymentFor.parent = payment.name;
+        paymentFor.idx = 0;
+        paymentFor.amount = this.doc.grandTotal
+        paymentFor.parentfield = 'for'
+        paymentFor.parenttype = 'Payment'
+        paymentFor.referenceType = 'SalesInvoice'
+        paymentFor.referenceName = this.doc.name;
+
+        payment.party = 'CF';
+        payment.amount = this.doc.grandTotal
+        payment.account = 'Activos - 1';
+        payment.creation = payment.date;
+        payment.paymentAccount = 'Billetera Bitcoin 1234567890abcdefg - 1.9.2.3.1';
+        payment.paymentType = 'Receive'
+        payment.submitted = 1;
+        payment.for = [paymentFor];
+        payment.cancelled = 1;
+
+        payment.insertOrUpdate().catch(this.handleError);
+        console.log(111111,this.doc)
+        console.log(33333,paymentFor)
+        console.log(444444,payment)
+        
+        } catch (error) {
+          console.log(error);
+        }
+      */
+      //routeTo(`/list/SalesInvoice`)
+      //this.$router.back()
+    },
+    async ValidateAmount(name, amount) {
+      try {
+        let item = await frappe.db.sql(
+          `Select * from Item Where name='${name}'`
+        );
+        if (item[0].amount >= amount) return false;
+        return true;
+      } catch (error) {
+        this.errorValidation('Error en la base de datos');
+        return true;
+      }
+    },
+    async updateItem(type, name, amount, rate) {
+      try {
+        let query =
+          `Update Item Set amount = (amount${type + amount})` +
+          (type === '+' ? `, rate=${rate}` : ``) +
+          ` where name='${name}'`;
+        await frappe.db.sql(query);
+      } catch (error) {
+        this.errorValidation('Error en la base de datos');
+      }
+    },
+    async errorsToupdateDatabase() {
+      let salesOrPurchance = this.doctype === 'SalesInvoice';
+      for (let i = 0; i < this.doc.items.length && salesOrPurchance; i++) {
+        if (
+          (await this.ValidateAmount(
+            this.doc.items[i].item,
+            this.doc.items[i].quantity
+          )) &&
+          this.doctype === 'SalesInvoice'
+        ) {
+          this.errorValidation(
+            `El producto "${this.doc.items[i].item}" no cuenta con stock suficiente.`
+          );
+          return true;
+        }
+      }
+      return false;
+    },
+    async updateDatabase() {
+      if (await this.errorsToupdateDatabase()) return true;
+      let salesOrPurchance = this.doctype === 'SalesInvoice';
+      for (let i = 0; i < this.doc.items.length; i++) {
+        await this.updateItem(
+          salesOrPurchance ? '-' : '+',
+          this.doc.items[i].item,
+          this.doc.items[i].quantity,
+          this.doc.items[i].rate
+        );
+      }
+      await this.buscarProductos();
+      return false;
     },
     getItemSelected(value) {
       this.itemSelected = value;
       this.amount = 1;
       this.newRate = null;
       this.desactivateButton = false;
+      this.$refs.cantidad.focus();
     },
     async getItem() {
       let item;
@@ -404,6 +530,7 @@ export default {
         );
         return item[0];
       } catch (error) {
+        this.errorValidation('Error en la base de datos');
         return undefined;
       }
     },
@@ -413,35 +540,36 @@ export default {
       }
       return false;
     },
+    errorValidation(message) {
+      handleErrorWithDialog(
+        {
+          message: message,
+        },
+        this.doc
+      );
+    },
     //Manejo de errores
     validateShop(item) {
       if (item == undefined) {
         //Producto no encontrado
-        handleErrorWithDialog(
-          {
-            message: `El producto "${this.producto}" no se encontro en la base de datos.`,
-          },
-          this.doc
+        this.errorValidation(
+          `El producto "${this.producto}" no se encontro en la base de datos.`
         );
         return true;
       }
 
       if (this.existInList(item.name)) {
         //Producto ya se encuentra en lista
-        handleErrorWithDialog(
-          { message: `El producto "${item.name}" ya fue agregado a la lista.` },
-          this.doc
+        this.errorValidation(
+          `El producto "${item.name}" ya fue agregado a la lista.`
         );
         return true;
       }
 
-      if (item.amount < this.amount) {
+      if (item.amount < this.amount && this.doctype === 'SalesInvoice') {
         //No se cuenta con la cantidad necesaria
-        handleErrorWithDialog(
-          {
-            message: `El producto "${item.name}" no cuenta con stock suficiente.`,
-          },
-          this.doc
+        this.errorValidation(
+          `El producto "${item.name}" no cuenta con stock suficiente.`
         );
         return true;
       }
@@ -493,13 +621,16 @@ export default {
       this.amount = 1;
       this.newRate = null;
       this.doc.grandTotal = this.getTotal();
+      this.itemSelected = '';
+      this.desactivateButton = true;
     },
+    async payItems() {},
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;
     },
     activateButton() {
       this.amount = this.amount >= 0 ? this.amount : 1;
-      this.desactivateButton = this.amount < 1;
+      this.desactivateButton = this.amount < 1 && this.itemSelected === '';
     },
     async buscarProductos() {
       try {
@@ -519,22 +650,30 @@ export default {
         );
       }
     },
-    onSubmitClick() {
+    async onSubmitClick() {
+      let error = false;
       let message =
         this.doctype === 'SalesInvoice'
-          ? this._('Are you sure you want to submit this invoice?')
-          : this._('Are you sure you want to submit this bill?');
-      showMessageDialog({
+          ? this._('¿Quiere realizar la venta?')
+          : this._('¿Quiere realizar la compra?');
+      await showMessageDialog({
         message,
         buttons: [
           {
-            label: this._('Submit'),
-            action: () => {
+            label: this._('Si'),
+            action: async () => {
+              error = await this.updateDatabase();
+              if (error) {
+                return;
+              }
+
+              await this.doc.insertOrUpdate().catch(this.handleError);
               this.doc.submit().catch(this.handleError);
+              this.$router.back();
             },
           },
           {
-            label: this._('Cancel'),
+            label: this._('Cancelar'),
             action() {},
           },
         ],
