@@ -1,30 +1,32 @@
 <template>
   <div class="py-3">
-    <div class="text-center px-50">
-      <label
-        v-if="itemSelected != ''"
-        class="bg-green-100 rounded px-4"
-        style="color: gray; font-family: verdana"
-      >
-        {{ itemSelected }}
-      </label>
-      <label
-        v-else-if="itemSelected == ''"
-        class="bg-orange-100 rounded px-4"
-        style="color: gray; font-family: verdana"
-      >
-        Seleecione un Porducto
-      </label>
-    </div>
+    <div v-if="messages">
+      <div class="text-center px-50">
+        <label
+          v-if="itemSelected != ''"
+          class="bg-green-100 rounded px-4"
+          style="color: gray; font-family: verdana"
+        >
+          {{ itemSelected }}
+        </label>
+        <label
+          v-else-if="itemSelected == ''"
+          class="bg-orange-100 rounded px-4"
+          style="color: gray; font-family: verdana"
+        >
+          Seleecione un Porducto
+        </label>
+      </div>
 
-    <div class="text-center py-2 px-50">
-      <label
-        v-if="items.length < 1"
-        class="bg-red-100 rounded px-4"
-        style="color: gray; font-family: verdana"
-      >
-        No se encontraron productos
-      </label>
+      <div class="text-center py-2 px-50">
+        <label
+          v-if="items.length < 1"
+          class="bg-red-100 rounded px-4"
+          style="color: gray; font-family: verdana"
+        >
+          No se encontraron productos
+        </label>
+      </div>
     </div>
     <div class="tableFixHead py-2">
       <table class="table table-xs table-hover">
@@ -43,14 +45,18 @@
             :class="indexKey % 2 != 0 ? 'bg-gray-100 ' : ''"
             v-for="(item, indexKey) in items"
             :v-if="indexKey < 5"
-            :key="item.name"
+            :key="indexKey+'tr'"
           >
             <td
               scope="col"
               v-for="(field, indexKey) in head"
-              :key="item.name + indexKey"
+              :key="indexKey+'td'"
             >
-              {{ field.fieldName==='rate'?`Q ${parseFloat(item[field.fieldName]).toFixed(2)}`:item[field.fieldName] }}
+              {{
+                field.fieldName === 'rate'&& messages
+                  ? `Q ${parseFloat(item[field.fieldName]).toFixed(2)}`
+                  : item[field.fieldName]
+              }}
             </td>
           </tr>
         </tbody>
@@ -73,6 +79,12 @@ export default {
       type: Array,
       default() {
         return [];
+      },
+    },
+    messages: {
+      type: Boolean,
+      default() {
+        return true;
       },
     },
   },
@@ -119,7 +131,7 @@ tr:last-child td:last-child {
 
 .tableFixHead {
   overflow: auto;
-  height: 100%;
+  height: 600px;
 }
 .tableFixHead thead th {
   position: sticky;

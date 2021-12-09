@@ -49,7 +49,7 @@
       <img src="@/assets/img/list-empty-state.svg" alt="" class="w-24" />
       <p class="my-3 text-gray-800">No {{ meta.label || meta.name }} found</p>
       <Button type="primary" class="text-white" @click="$emit('makeNewDoc')">
-        Create a new {{ meta.label || meta.name }}
+        Crear Nuevo {{ meta.label || meta.name }}
       </Button>
     </div>
   </div>
@@ -100,6 +100,16 @@ export default {
       this.updateData();
     });
   },
+  async activated() {
+    if (this.doctype === 'Item') {
+      this.data = await frappe.db.getAll({
+        doctype: this.doctype,
+        fields: ['*'],
+        orderBy: 'name',
+      });
+      this.data = this.data.reverse();
+    }
+  },
   methods: {
     async setupColumnsAndData() {
       this.doctype = this.listConfig.doctype;
@@ -123,7 +133,11 @@ export default {
         filters,
         orderBy: 'name',
       });
-      this.data = this.data.reverse();
+      if (this.doctype === 'Item') {
+        this.data = this.data.reverse();
+      } else {
+        this.data = this.data.slice(0, 14);
+      }
     },
     getFilters() {
       let filters = {};

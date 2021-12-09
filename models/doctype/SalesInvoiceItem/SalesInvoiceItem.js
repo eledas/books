@@ -40,19 +40,19 @@ export default {
       label: 'Precio',
       fieldtype: 'Currency',
       required: 1,
-      formula: async (row, doc) => {
+      /*formula: async (row, doc) => {
         const baseRate = (await doc.getFrom('Item', row.item, 'rate')) || 0;
         const exchangeRate = doc.exchangeRate ?? 1;
         return baseRate / exchangeRate;
-      },
-      getCurrency: (row, doc) => doc.currency,
-      formulaDependsOn: ['item']
+      },*/
+      //getCurrency: (row, doc) => doc.currency,
+      //formulaDependsOn: ['item']
     },
     {
       fieldname: 'baseRate',
       label: 'Rate (Company Currency)',
       fieldtype: 'Currency',
-      formula: (row, doc) => row.rate * doc.exchangeRate,
+      //formula: (row, doc) => row.rate * doc.exchangeRate,
       readOnly: 1
     },
     {

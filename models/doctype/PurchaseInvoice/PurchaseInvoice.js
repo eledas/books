@@ -16,7 +16,7 @@ export default {
   showTitle: true,
   fields: [
     {
-      label: 'Venta No',
+      label: 'Compra No',
       fieldname: 'name',
       fieldtype: 'Data',
       required: 1,

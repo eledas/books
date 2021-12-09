@@ -8,6 +8,7 @@ export default {
     'barCode',
     'amount',
     'dateExpired',
+    'costRate',
     'rate',
     'description'
   ]

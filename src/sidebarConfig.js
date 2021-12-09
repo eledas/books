@@ -45,6 +45,11 @@ const config = {
       route: '/list/PurchaseInvoice'
     },
     {
+      title: _('Reportes'),
+      icon: getIcon('purchase'),
+      route: '/report/general-ledger'
+    },
+    {
       title: _('Sales'),
       icon: getIcon('sales'),
       route: '/list/SalesInvoice',

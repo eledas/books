@@ -6,7 +6,7 @@
         <StatusBadge :status="status" />
         <Button
           v-if="doc.submitted"
-          class="text-gray-900 text-lg ml-2"
+          class="text-gray-900 text-xl ml-2"
           :icon="true"
           @click="routeTo(`/print/${doc.doctype}/${doc.name}`)"
         >
@@ -68,7 +68,9 @@
             </div>-->
             </div>
             <div class="flex justify-between mt-4">
-              <div class="w-2/4 px-2">
+              <div
+                :class="`${doctype == 'SalesInvoice' ? 'w-2/4' : 'w-2/5'} px-2`"
+              >
                 <div class="input-container ic1">
                   <input
                     class="
@@ -93,7 +95,9 @@
                   >
                 </div>
               </div>
-              <div class="w-1/4 px-2">
+              <div
+                :class="`${doctype == 'SalesInvoice' ? 'w-1/4' : 'w-1/5'} px-2`"
+              >
                 <div class="input-container ic1">
                   <input
                     class="
@@ -121,7 +125,34 @@
                   >
                 </div>
               </div>
-              <div class="w-1/4 px-2">
+              <div v-if="doctype != 'SalesInvoice'" class="w-1/5 px-2">
+                <div class="input-container ic1">
+                  <input
+                    class="
+                      input3
+                      mt-2
+                      w-full
+                      text-base
+                      bg-gray-100
+                      px-3
+                      py-2
+                      text-base
+                      rounded
+                    "
+                    placeholder=" "
+                    type="number"
+                    min="0"
+                    v-model="newRateCost"
+                    onclick="this.select()"
+                    @keyup="validateNewRate"
+                    @change="validateNewRate"
+                  />
+                  <label class="bg-gray-100 placeholder text-base"
+                    >Precio Costo</label
+                  >
+                </div>
+              </div>
+              <div class="w-1/5 px-2">
                 <div class="input-container ic1">
                   <input
                     class="
@@ -144,7 +175,7 @@
                     @change="validateNewRate"
                   />
                   <label class="bg-gray-100 placeholder text-base"
-                    >Nuevo Precio</label
+                    >Precio Venta</label
                   >
                 </div>
               </div>
@@ -157,13 +188,13 @@
                   class="bg-success text-white text-md"
                   :disabled="desactivateButton || doc.submitted"
                 >
-                  {{ _('Agregar Producto') }}
+                  {{ _(' Agregar Producto') }}
                 </Button>
               </div>
             </div>
 
             <div class="mt-2 px-2"></div>
-            <div class="mt-2 px-2">
+            <div class="w-full mt-2 px-2">
               <TableView
                 :head="head"
                 :items="items"
@@ -335,7 +366,8 @@ export default {
       companyName: null,
       desactivateButton: true,
       amount: 1,
-      newRate: null,
+      newRate: '',
+      newRateCost: '',
       producto: '',
       items: [],
       itemSelected: '',
@@ -425,40 +457,6 @@ export default {
         this.doc.items.filter((row) => row.item)
       );
       this.onSubmitClick();
-      /*
-        try {
-        let paymentFor = await frappe.getNewDoc('PaymentFor');
-        let payment = await frappe.getNewDoc('Payment');
-
-        paymentFor.parent = payment.name;
-        paymentFor.idx = 0;
-        paymentFor.amount = this.doc.grandTotal
-        paymentFor.parentfield = 'for'
-        paymentFor.parenttype = 'Payment'
-        paymentFor.referenceType = 'SalesInvoice'
-        paymentFor.referenceName = this.doc.name;
-
-        payment.party = 'CF';
-        payment.amount = this.doc.grandTotal
-        payment.account = 'Activos - 1';
-        payment.creation = payment.date;
-        payment.paymentAccount = 'Billetera Bitcoin 1234567890abcdefg - 1.9.2.3.1';
-        payment.paymentType = 'Receive'
-        payment.submitted = 1;
-        payment.for = [paymentFor];
-        payment.cancelled = 1;
-
-        payment.insertOrUpdate().catch(this.handleError);
-        console.log(111111,this.doc)
-        console.log(33333,paymentFor)
-        console.log(444444,payment)
-        
-        } catch (error) {
-          console.log(error);
-        }
-      */
-      //routeTo(`/list/SalesInvoice`)
-      //this.$router.back()
     },
     async ValidateAmount(name, amount) {
       try {
@@ -472,11 +470,11 @@ export default {
         return true;
       }
     },
-    async updateItem(type, name, amount, rate) {
+    async updateItem(type, name, amount, rate, baseRate) {
       try {
         let query =
           `Update Item Set amount = (amount${type + amount})` +
-          (type === '+' ? `, rate=${rate}` : ``) +
+          (type === '+' ? `, costRate=${baseRate}, rate=${rate}` : ``) +
           ` where name='${name}'`;
         await frappe.db.sql(query);
       } catch (error) {
@@ -503,22 +501,31 @@ export default {
     },
     async updateDatabase() {
       if (await this.errorsToupdateDatabase()) return true;
-      let salesOrPurchance = this.doctype === 'SalesInvoice';
       for (let i = 0; i < this.doc.items.length; i++) {
-        await this.updateItem(
-          salesOrPurchance ? '-' : '+',
-          this.doc.items[i].item,
-          this.doc.items[i].quantity,
-          this.doc.items[i].rate
-        );
+        if (this.doctype === 'SalesInvoice') {
+          await this.updateItem(
+            '-',
+            this.doc.items[i].item,
+            this.doc.items[i].quantity
+          );
+        } else {
+          await this.updateItem(
+            '+',
+            this.doc.items[i].item,
+            this.doc.items[i].quantity,
+            this.doc.items[i].baseRate,
+            this.doc.items[i].rate
+          );
+        }
       }
       await this.buscarProductos();
       return false;
     },
     getItemSelected(value) {
       this.itemSelected = value;
-      this.amount = 1;
-      this.newRate = null;
+      this.amount = '';
+      this.newRate = '';
+      this.newRateCost = '';
       this.desactivateButton = false;
       this.$refs.cantidad.focus();
     },
@@ -599,10 +606,16 @@ export default {
       document.account = 'Activos - 1';
       document.item = this.itemSelected;
       document.description = item.description;
-      document.rate = this.newRate != null ? this.newRate : item.rate;
-      document.amount = this.amount;
-      document.quantity = this.amount;
-      document.baseRate = item.costRate;
+      document.amount = this.amount == '' ? 1 : this.amount;
+      document.quantity = this.amount == '' ? 1 : this.amount;
+      if (this.doctype === 'SalesInvoice') {
+        document.rate = this.newRate !== '' ? this.newRate : item.rate;
+        document.baseRate = item.costRate;
+      } else {
+        document.rate =
+          this.newRateCost !== '' ? this.newRateCost : item.costRate;
+        document.baseRate = this.newRate !== '' ? this.newRate : item.rate;
+      }
       this.doc.items.push(document);
     },
     getTotal() {
@@ -618,8 +631,9 @@ export default {
 
       let data = this.createData();
       this.createDocument(data, item);
-      this.amount = 1;
-      this.newRate = null;
+      this.amount = '';
+      this.newRate = '';
+      this.newRateCost = '';
       this.doc.grandTotal = this.getTotal();
       this.itemSelected = '';
       this.desactivateButton = true;
@@ -627,6 +641,7 @@ export default {
     async payItems() {},
     validateNewRate() {
       this.newRate = this.newRate >= 0 ? this.newRate : 1;
+      this.newRateCost = this.newRateCost >= 0 ? this.newRateCost : 1;
     },
     activateButton() {
       this.amount = this.amount >= 0 ? this.amount : 1;
@@ -666,9 +681,9 @@ export default {
               if (error) {
                 return;
               }
-
+              this.doc.submitted = 1;
               await this.doc.insertOrUpdate().catch(this.handleError);
-              this.doc.submit().catch(this.handleError);
+              await this.doc.submit().catch(this.handleError);
               this.$router.back();
             },
           },
