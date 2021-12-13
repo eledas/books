@@ -45,15 +45,16 @@
             :class="indexKey % 2 != 0 ? 'bg-gray-100 ' : ''"
             v-for="(item, indexKey) in items"
             :v-if="indexKey < 5"
-            :key="indexKey+'tr'"
+            :key="indexKey + 'tr'"
           >
             <td
               scope="col"
               v-for="(field, indexKey) in head"
-              :key="indexKey+'td'"
+              :key="indexKey + 'td'"
+              :class="getColor(item[field.fieldName])"
             >
               {{
-                field.fieldName === 'rate'&& messages
+                field.fieldName === 'rate' && messages
                   ? `Q ${parseFloat(item[field.fieldName]).toFixed(2)}`
                   : item[field.fieldName]
               }}
@@ -87,6 +88,12 @@ export default {
         return true;
       },
     },
+    color: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
   },
   data() {
     return {
@@ -98,7 +105,16 @@ export default {
       this.$emit('getItemSelected', value);
       this.itemSelected = value;
     },
+    getColor(text) {
+      if (!this.color) return '';
+      switch(text){
+        case 'Si': return 'text-danger'
+        case 'No': return 'text-warning'
+        default: return ''
+      }
+    },
   },
+  computed: {},
 };
 </script>
 <style scoped>

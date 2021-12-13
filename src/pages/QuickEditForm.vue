@@ -46,7 +46,7 @@
       :fields="fields"
       :autosave="false"
       :column-ratio="[1.1, 2]"
-      :type=2
+      :type="2"
       @crear="crearElemento"
     />
     <component v-if="doc && quickEditWidget" :is="quickEditWidget" />
@@ -125,8 +125,14 @@ export default {
     },
   },
   methods: {
-     async crearElemento() {
+    async crearElemento() {
       if (this.doc._notInserted) {
+        if (this.doc.amount === null) {
+          this.doc.amount = 0;
+        }
+        if (this.doc.minAmount === null) {
+          this.doc.minAmount = 0;
+        }
         this.$refs.form.insert();
       }
     },
@@ -200,7 +206,7 @@ export default {
         }
         input.size = valueLength;
       }
-    }
+    },
   },
 };
 </script>

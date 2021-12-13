@@ -54,14 +54,14 @@ export default {
       fieldname: 'amount',
       label: 'Existencia',
       fieldtype: 'Int',
-      default: '0',
+      default: 0,
       placeholder: '0',
     },
     {
       fieldname: 'minAmount',
       label: 'Existencia Minima',
       fieldtype: 'Int',
-      default: 0.0,
+      default: 0,
       placeholder: '0',
     },
     {

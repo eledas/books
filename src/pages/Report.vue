@@ -148,13 +148,33 @@
             Ver Reporte Detallado
           </Button>
         </div>
+        <div class="px-2">
+          <Button
+            :icon="true"
+            @click="minProducts"
+            type="primary"
+            class="bg-success text-white text-xl"
+          >
+            Ver Productos Agotados
+          </Button>
+        </div>
+        <div class="px-2">
+          <Button
+            :icon="true"
+            @click="expiredProducts"
+            type="primary"
+            class="bg-success text-white text-xl"
+          >
+            Ver Productos por Vencer
+          </Button>
+        </div>
       </div>
       <div class="flex mt-4 px-10">
         <div class="px-2">
           <Button
             :icon="true"
             @click="generateReport"
-            type="primary"
+            type="tird"
             class="bg-success text-white text-xl"
           >
             Generar Reporte
@@ -164,9 +184,18 @@
     </div>
     <div class="mt-2 px-2">
       <TableView
-        :head="tipo ? head : headDetail"
+        v-if="tipo === 0 || tipo === 1"
+        :head="getHead"
         :items="items"
         :messages="false"
+        :color="false"
+      />
+      <TableView
+        v-if="tipo === 2 || tipo === 3"
+        :head="getHead"
+        :items="items"
+        :messages="false"
+        :color="true"
       />
     </div>
     <div class="mt-2 px-2"></div>
@@ -174,6 +203,8 @@
 </template>
 <script>
 import frappe from 'frappejs';
+import infoReport from './infoReport.js';
+import queryReport from './queryReport';
 import PageHeader from '@/components/PageHeader';
 import TableView from '../components/Tableview.vue';
 import Button from '@/components/Button';
@@ -207,103 +238,11 @@ export default {
         columns: [],
       },
       timeReport: '',
-      tipo: false,
+      tipo: 0,
       tipeReportTime: 'year',
       theDateStart: '',
       theDateEnd: '',
       items: [],
-      baseReportData: {
-        title: {
-          title: 'Agropecuaria Aldana',
-        },
-        label: {
-          invoice: `Reporte de Ventas ${this.tipo ? '' : 'Detallado'}`,
-          tableItems: 'Producto',
-          tableQuantity: 'Cantidad',
-          tableCost: 'Suma Costo',
-          tableRate: 'Suma Venta',
-          tableGain: 'Ganancia',
-          totalGrand: '',
-        },
-      },
-      baseReportDataDetail: {
-        title: {
-          title: 'Agropecuaria Aldana',
-        },
-        label: {
-          invoice: `Reporte de Ventas ${this.tipo ? '' : 'Detallado'}`,
-          tableItems: 'item',
-          tableQuantity: 'cant',
-          tableCost: 'Costo',
-          tableRate: 'Venta',
-          tableGain: 'Ganancia',
-          tableTotalCost: 'Total Costo',
-          tableTotalRate: 'Total Venta',
-          tableTotalGain: 'Total Ganancia',
-          tableDate: 'Fecha',
-          totalGrand: '',
-        },
-      },
-      head: [
-        {
-          title: 'Producto',
-          fieldName: 'title',
-        },
-        {
-          title: 'Cantidad',
-          fieldName: 'quantity',
-        },
-        {
-          title: 'Suma Costo',
-          fieldName: 'cost',
-        },
-        {
-          title: 'Suma Venta',
-          fieldName: 'rate',
-        },
-        {
-          title: 'Ganancia',
-          fieldName: 'gain',
-        },
-      ],
-      headDetail: [
-        {
-          title: 'Fecha',
-          fieldName: 'date',
-        },
-        {
-          title: 'Producto',
-          fieldName: 'title',
-        },
-        {
-          title: 'Cantidad',
-          fieldName: 'quantity',
-        },
-        {
-          title: 'Costo',
-          fieldName: 'cost',
-        },
-        {
-          title: 'Venta',
-          fieldName: 'rate',
-        },
-        {
-          title: 'Ganancia',
-          fieldName: 'gain',
-        },
-        {
-          title: 'Costo Total',
-          fieldName: 'costTotal',
-        },
-        {
-          title: 'Venta Total',
-          fieldName: 'rateTotal',
-        },
-        {
-          title: 'Ganancia Total',
-          fieldName: 'gainTotal',
-        },
-      ],
     };
   },
   async activated() {
@@ -333,10 +272,7 @@ export default {
         items: this.items,
       };
 
-      generateReport(
-        this.tipo ? this.baseReportData : this.baseReportDataDetail,
-        shortPrintData
-      );
+      generateReport(infoReport.getBaseReport(this.tipo), shortPrintData);
     },
     validateInputs() {
       switch (this.tipeReportTime) {
@@ -354,61 +290,11 @@ export default {
       }
       return false;
     },
-    getSimpleQuery() {
-      return ` 
-          (SELECT 
-            item, SUM(quantity) AS cantidad, 
-            SUM(quantity*baseRate) AS SumatoriaCosto, 
-            SUM(quantity*rate) AS SumatoriaVenta, 
-            SUM(quantity*(rate-baseRate)) AS Ganancia
-          FROM 
-            SalesInvoiceItem
-          INNER JOIN 
-              (
-              SELECT  
-                name 
-              FROM 
-                SalesInvoice
-              ${this.timeReport}
-            ) dateView
-          ON 
-            SalesInvoiceItem.parent=dateView.name
-          GROUP BY SalesInvoiceItem.item)
-      `;
-    },
     async getDetailQuery() {
-      let queriDates = `
-        SELECT  
-          date(creation) AS date
-        FROM 
-          SalesInvoice
-        ${this.timeReport}
-        Group by date
-      `;
-      let query = ` 
-          SELECT 
-           	item, quantity, date, baseRate AS costo, 
-            rate AS venta, (rate-baseRate) AS ganancia, 
-            quantity*baseRate AS costoTotal, 
-            quantity*rate AS ventaTotal, 
-            quantity*(rate-baseRate) AS gananciaTotal
-          FROM 
-            SalesInvoiceItem
-          INNER JOIN 
-              (
-              SELECT  
-                name, date(creation) AS date
-              FROM 
-                SalesInvoice
-              ${this.timeReport}
-            ) dateView
-          ON 
-            SalesInvoiceItem.parent=dateView.name
-          ORDER BY item
-      `;
-
-      let dates = await frappe.db.sql(queriDates);
-      let data = await frappe.db.sql(query);
+      let dates = await frappe.db.sql(queryReport.getDates(this.timeReport));
+      let data = await frappe.db.sql(
+        queryReport.getDetailQuery(this.timeReport)
+      );
 
       dates.forEach((date) => {
         this.items.push({
@@ -439,19 +325,13 @@ export default {
         });
       });
 
-      data = await frappe.db.sql(
-        `SELECT 
-        SUM(SumatoriaVenta) AS rate, SUM(SumatoriaCosto) AS cost, SUM(Ganancia) AS gan
-        FROM ${this.getSimpleQuery()} SumarotyView;`
-      );
+      data = await frappe.db.sql(queryReport.getTotals(this.timeReport));
 
       return data[0];
     },
     async getSimpleReport() {
       let data = await frappe.db.sql(
-        `SELECT 
-        *
-        FROM ${this.getSimpleQuery()} SumarotyView;`
+        queryReport.getSimpleQuery(this.timeReport)
       );
 
       data.forEach((item) => {
@@ -464,11 +344,7 @@ export default {
         });
       });
 
-      data = await frappe.db.sql(
-        `SELECT 
-        SUM(SumatoriaVenta) AS rate, SUM(SumatoriaCosto) AS cost, SUM(Ganancia) AS gan
-        FROM ${this.getSimpleQuery()} SumarotyView;`
-      );
+      data = await frappe.db.sql(queryReport.getTotals(this.timeReport));
 
       return data[0];
     },
@@ -529,13 +405,82 @@ export default {
 
       return { dd, mm, yyyy };
     },
+    async expiredProducts() {
+      this.items = [];
+      this.tipo = 2;
+      this.setTime();
+      try {
+        let data = await frappe.db.sql(queryReport.getExpired());
+        data.forEach((item) => {
+          this.items.push({
+            title: item.name,
+            quantity: item.amount + '',
+            cost: '',
+            rate: item.fechaVencimiento + '',
+            gain: item.vencido === 1 ? 'Si' : 'No',
+          });
+        });
+
+        this.items.push({
+          title: '--',
+          quantity: '--',
+          cost: '',
+          rate: '--',
+          gain: '--',
+        });
+
+        if (data.length === 0) {
+          showMessageDialog({
+            message: 'No se encontraron datos en la fecha seleccionada',
+          });
+          return;
+        }
+      } catch (error) {
+        this.errorValidation('Error al generar el reporte');
+      }
+    },
+    async minProducts() {
+      this.items = [];
+      this.tipo = 3;
+      this.setTime();
+      try {
+        let data = await frappe.db.sql(queryReport.getMin());
+
+        data.forEach((item) => {
+          this.items.push({
+            title: item.name,
+            quantity: item.amount === null ? '0' : item.amount + '',
+            cost: '',
+            rate: item.minAmount + '',
+            gain: item.amount === 0 ? 'Si' : 'No',
+          });
+        });
+
+        this.items.push({
+          title: '--',
+          quantity: '--',
+          cost: '',
+          rate: '--',
+          gain: '--',
+        });
+
+        if (data.length === 0) {
+          showMessageDialog({
+            message: 'No se encontraron datos en la fecha seleccionada',
+          });
+          return;
+        }
+      } catch (error) {
+        this.errorValidation('Error al generar el reporte');
+      }
+    },
     async createSimpleReport() {
       this.items = [];
       if (this.validateInputs()) {
         this.errorValidation('Por favor, ingresar fecha');
         return;
       }
-      this.tipo = true;
+      this.tipo = 0;
       this.setTime();
       try {
         let data = await this.getSimpleReport();
@@ -553,7 +498,6 @@ export default {
           });
           return;
         }
-        console.log('-=-=-=-');
 
         this.items.push({
           title: '',
@@ -573,7 +517,7 @@ export default {
         return;
       }
       try {
-        this.tipo = false;
+        this.tipo = 1;
         this.setTime();
 
         let data = await this.getDetailQuery();
@@ -745,6 +689,9 @@ export default {
     },
   },
   computed: {
+    getHead() {
+      return infoReport.getHead(this.tipo);
+    },
     columns() {
       return this.loading
         ? this.blankStateData.columns
